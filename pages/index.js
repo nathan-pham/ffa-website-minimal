@@ -63,7 +63,7 @@ export default function Home() {
                 </div>
             </Section>
 
-            <Section className="mt-24">
+            <Section className="mt-20">
                 <div className="text-center">
                     <p className="uppercase font-mono text-sm font-semibold tracking-widest mb-8">Begin your FFA journey</p>
                 </div>
