@@ -44,7 +44,7 @@ export default function Home() {
                 <div className="text-center">
                     <Step number={ 2 } circleGradient="from-orange-500 to-yellow-300" lineGradient="from-orange-500" />
                     
-                    <h2 className="my-6 text-5xl font-bold">Build with our <TextGradient gradient="from-orange-500 to-yellow-300">awesome team.</TextGradient></h2>
+                    <h2 className="my-6 text-5xl font-bold">Work with our <TextGradient gradient="from-orange-500 to-yellow-300">awesome team.</TextGradient></h2>
                     <p className="text-gray-500 max-w-2xl text-xl mx-auto">Doing stuff alone is lame. Collaborate with your peers and our officers to make events happen, participate in national competitions, and have fun!</p>
                 </div>
 
