@@ -5,59 +5,20 @@ import Step from "@components/Step"
 
 import TextGradient from "@components/TextGradient"
 import { PrimaryButton } from "@components/Atoms/Button"
+import Input from "@components/Atoms/Input"
+import Textarea from "@components/Atoms/Textarea"
 
 function Footer() {
 
     return (
 
-        <footer className="py-6">
-
+        <footer className="py-12 text-center text-gray-500 font-xl">
+            Rising from the rubble. Del Oro FFA.
         </footer>
 
     )
 
 }
-
-function Input({ forLabel, className, name, ...props }) {
-
-    return (
-
-        <>
-            {
-
-                forLabel 
-                    ? <label for="name" className={ [ "capitalize font-bold text-md", className ].join(' ') }>{ forLabel }</label>
-                    : <></>
-
-            }
-
-            <input className="border px-4 py-2 mt-2 rounded-md outline-none" name={ name } id={ name } {...props} />
-        </>
-    )
-
-}
-
-function Textarea({ forLabel, className, name, ...props }) {
-
-    return (
-        
-        <>
-            {
-                
-                forLabel 
-                    ? <label for="name" className={ [ "capitalize font-bold text-md", className ].join(' ') }>{ forLabel }</label>
-                    : <></>
-                
-            }
-
-            <textarea className="border px-4 py-2 mt-2 rounded-md resize-y h-52 outline-none" name={ name } { ...props }></textarea>
-        </>
-    
-    )
-
-}
-
-
 
 export default function Home() {
     
@@ -117,18 +78,37 @@ export default function Home() {
                 <div className="text-center">
                     <p className="uppercase font-mono text-sm font-semibold tracking-widest mb-8">Begin your FFA journey</p>
                 </div>
-                
-                <form className="rounded-lg shadow-lg p-6 flex flex-col max-w-2xl mx-auto">
-                    <Input forLabel="First & Last Name" name="name" placeholder="Jane Doe "/>
 
-                    <Input forLabel="School Email" name="email" placeholder="janedoe@puhsd.k12.ca.us" className="mt-6"/>
+                <div className="grid grid-cols-2 gap-8">
+                    <div>
+                        <h2 className="text-3xl font-bold">Ready to do something epic?</h2>
+                        
+                        <form className="rounded-lg shadow-xl p-6 flex flex-col mx-auto mt-6">
+                            <Input forLabel="First & Last Name" name="name" placeholder="Jane Doe "/>
 
-                    <Textarea forLabel="Additional Details" name="details" placeholder="Tell us about yourself and why you're interested!" className="mt-6" />
+                            <Input forLabel="School Email" name="email" placeholder="janedoe@puhsd.k12.ca.us" className="mt-6"/>
 
-                    <div className="mt-6 text-right">
-                        <PrimaryButton>Send</PrimaryButton>
+                            <Textarea forLabel="Additional Details" name="details" placeholder="Tell us about yourself and why you're interested!" className="mt-6" />
+
+                            <div className="mt-6 text-right">
+                                <PrimaryButton>Send</PrimaryButton>
+                            </div>
+                        </form>
                     </div>
-                </form>
+
+                    <div>
+                        <h2 className="text-3xl font-bold">Connect with us.</h2>
+                        <div className="border bg-gray-50 p-6 mt-6 rounded-lg">
+                            <p className="text-lg">Get important reminders and announcements for workdays, competitions, and events.</p>
+                        
+                            <div className="flex gap-4 mt-6">
+                                <img src="icons/instagram.png" className="w-16 rounded-lg" />
+                                <img src="icons/remind.png" className="w-16 rounded-lg" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
             </Section>
 
             <Footer />
