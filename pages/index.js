@@ -7,18 +7,7 @@ import TextGradient from "@components/TextGradient"
 import { PrimaryButton } from "@components/Atoms/Button"
 import Input from "@components/Atoms/Input"
 import Textarea from "@components/Atoms/Textarea"
-
-function Footer() {
-
-    return (
-
-        <footer className="py-12 text-center text-gray-500 font-xl">
-            Rising from the rubble. Del Oro FFA.
-        </footer>
-
-    )
-
-}
+import Footer from "@components/Atoms/Footer"
 
 export default function Home() {
     
