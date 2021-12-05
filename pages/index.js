@@ -6,6 +6,59 @@ import Step from "@components/Step"
 import TextGradient from "@components/TextGradient"
 import { PrimaryButton } from "@components/Atoms/Button"
 
+function Footer() {
+
+    return (
+
+        <footer className="py-6">
+
+        </footer>
+
+    )
+
+}
+
+function Input({ forLabel, className, name, ...props }) {
+
+    return (
+
+        <>
+            {
+
+                forLabel 
+                    ? <label for="name" className={ [ "capitalize font-bold text-md", className ].join(' ') }>{ forLabel }</label>
+                    : <></>
+
+            }
+
+            <input className="border px-4 py-2 mt-2 rounded-md outline-none" name={ name } id={ name } {...props} />
+        </>
+    )
+
+}
+
+function Textarea({ forLabel, className, name, ...props }) {
+
+    return (
+        
+        <>
+            {
+                
+                forLabel 
+                    ? <label for="name" className={ [ "capitalize font-bold text-md", className ].join(' ') }>{ forLabel }</label>
+                    : <></>
+                
+            }
+
+            <textarea className="border px-4 py-2 mt-2 rounded-md resize-y h-52 outline-none" name={ name } { ...props }></textarea>
+        </>
+    
+    )
+
+}
+
+
+
 export default function Home() {
     
     return (
@@ -50,14 +103,35 @@ export default function Home() {
                 </div>
             </Section>
 
-            <Section className="my-20">
-                <div className="w-full text-center">
-                    <h2 className="text-5xl font-bold">Trusted by <TextGradient>local businesses.</TextGradient></h2>
-                    <p className="mt-6 mb-8 text-gray-500 text-xl">You're in good hands. <b>Promise</b>.</p>
+            <Section className="mt-10">
+                <div className="text-center">
+                    <Step number={ 3 } circleGradient="from-purple-500 to-pink-400" lineGradient="from-purple-500" />
+
+                    <h2 className="my-6 text-5xl font-bold">Trusted by <TextGradient gradient="from-purple-500 to-pink-400">local businesses.</TextGradient></h2>
+                    <p className="text-gray-500 text-xl mb-8">You're in good hands. Promise.</p>
                     <PrimaryButton>Sponsor Us</PrimaryButton>
                 </div>
             </Section>
 
+            <Section className="mt-24">
+                <div className="text-center">
+                    <p className="uppercase font-mono text-sm font-semibold tracking-widest mb-8">Begin your FFA journey</p>
+                </div>
+                
+                <form className="rounded-lg shadow-lg p-6 flex flex-col max-w-2xl mx-auto">
+                    <Input forLabel="First & Last Name" name="name" placeholder="Jane Doe "/>
+
+                    <Input forLabel="School Email" name="email" placeholder="janedoe@puhsd.k12.ca.us" className="mt-6"/>
+
+                    <Textarea forLabel="Additional Details" name="details" placeholder="Tell us about yourself and why you're interested!" className="mt-6" />
+
+                    <div className="mt-6 text-right">
+                        <PrimaryButton>Send</PrimaryButton>
+                    </div>
+                </form>
+            </Section>
+
+            <Footer />
         </>
     )
 
