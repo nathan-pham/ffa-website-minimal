@@ -3,7 +3,7 @@ https://deloro.farm
 
 ## TODO
 - [ ] Refactor Header Component
-- [ ] Enhance SEO with Root Component
+- [x] Enhance SEO with Root Component
 - [ ] Farm Tour
 - [ ] Add "Edit" button to posts
 - [ ] Add functionality to forms (Contact Form, Icons)

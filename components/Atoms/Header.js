@@ -22,15 +22,13 @@ export default function Header() {
                 if (isOpen) {
                     y.current = lerp(y.current, 0, 0.055);
                     c.current = lerp(c.current, 0, 0.075);
-                    $transition.current.style.display = "flex";
+                    $transition.current.style.pointerEvents = "auto";
                     $transitionSVGPath.current.setAttribute("d", `M 0 ${y.current} L 0 100 100 100 100 ${y.current} C ${50} ${c.current}, ${50} ${c.current}, 0 ${y.current}`);
                 } else {
                     y.current = lerp(y.current, 100, 0.055);
                     c.current = lerp(c.current, 100, 0.075);
 
-                    if (Math.round(y.current) === 100 && Math.round(c.current) === 100) {
-                        $transition.current.style.display = "none";
-                    }
+                    $transition.current.style.pointerEvents = "none";
                     $transitionSVGPath.current.setAttribute("d", `M 0 ${y.current} L 0 100 100 100 100 ${y.current} C 50 ${c.current}, ${50} ${c.current}, 0 ${y.current}`);
                 }
             } catch (e) {

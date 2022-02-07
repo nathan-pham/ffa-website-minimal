@@ -11,6 +11,7 @@ import Link from "next/link";
 
 import { promises as fs } from "fs";
 import * as path from "path";
+import Root from "@components/Root";
 
 const postsDirectory = path.join(process.cwd(), "./pages/post/markdown");
 
@@ -24,11 +25,10 @@ export default function Post({ posts = [] }) {
     const filterPosts = (post) => post.data.title.toLowerCase().includes(search.toLowerCase()) || post.data.description.toLowerCase().includes(search.toLowerCase());
 
     return (
-        <>
-            <Header />
+        <Root title="Posts">
             <Section>
                 <Link href="/">
-                    <a className="block mt-20 hover:underline">← Back to Home</a>
+                    <a className="block hover:underline">← Back to Home</a>
                 </Link>
 
                 <h1 className="text-6xl font-extrabold leading-tight">
@@ -46,7 +46,7 @@ export default function Post({ posts = [] }) {
                 </div>
             </Section>
             <Footer />
-        </>
+        </Root>
     );
 }
 

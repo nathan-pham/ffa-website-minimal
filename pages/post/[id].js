@@ -11,16 +11,16 @@ import html from "remark-html";
 
 import { promises as fs } from "fs";
 import * as path from "path";
+import Root from "@components/Root";
 
 const postsDirectory = path.join(process.cwd(), "./pages/post/markdown");
 
-export default function Post({ id, metadata, content }) {
+export default function Post({ metadata, content }) {
     return (
-        <>
-            <Header />
+        <Root title={metadata.title}>
             <Section>
                 <Link href="/post">
-                    <a className="block mt-20 hover:underline">← Back to Posts</a>
+                    <a className="block hover:underline">← Back to Posts</a>
                 </Link>
                 <h1 className="text-6xl font-extrabold leading-tight">
                     You're reading: <TextGradient>{metadata.title}</TextGradient>
@@ -30,7 +30,7 @@ export default function Post({ id, metadata, content }) {
                 </div>
             </Section>
             <Footer />
-        </>
+        </Root>
     );
 }
 

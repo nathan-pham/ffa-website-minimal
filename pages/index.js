@@ -10,11 +10,12 @@ import Textarea from "@components/Atoms/Textarea";
 import Header from "@components/Atoms/Header";
 import Footer from "@components/Atoms/Footer";
 
+import Root from "@components/Root";
+
 
 export default function Home() {
     return (
-        <>
-            <Header />
+        <Root>
             <Section className="h-screen flex items-center">
                 <div>
                     <h1 className="text-6xl font-extrabold leading-tight">
@@ -119,6 +120,6 @@ export default function Home() {
             </Section>
 
             <Footer />
-        </>
+        </Root>
     );
 }
