@@ -6,12 +6,12 @@ export default function Textarea({ forLabel, className, name, ...props }) {
             {
                 
                 forLabel 
-                    ? <label for="name" className={ [ "capitalize font-bold text-lg", className ].join(' ') }>{ forLabel }</label>
+                    ? <label htmlFor="name" className="capitalize font-bold text-lg">{ forLabel }</label>
                     : <></>
                 
             }
 
-            <textarea className="border px-4 py-2 mt-2 rounded-md resize-y h-52 outline-none" name={ name } { ...props }></textarea>
+            <textarea className={["border px-4 py-2 rounded-md resize-y h-52 outline-none focus:border-black", className].join(' ')} name={ name } { ...props }></textarea>
         </>
     
     )

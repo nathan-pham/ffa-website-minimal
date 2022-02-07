@@ -1,3 +1,6 @@
+import { PrimaryButton } from "@components/Atoms/Button"
+import Link from "next/link"
+
 export default function LearningSection() {
 
     const threeRingModel = [
@@ -26,6 +29,11 @@ export default function LearningSection() {
                 
                 }
 
+                <Link href="/post">
+                    <a>
+                        <PrimaryButton className="mt-12">Learn More</PrimaryButton>
+                    </a>
+                </Link>
             </div>
         </div>    
 
