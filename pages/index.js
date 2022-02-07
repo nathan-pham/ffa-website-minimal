@@ -7,11 +7,14 @@ import TextGradient from "@components/TextGradient";
 import { PrimaryButton } from "@components/Atoms/Button";
 import Input from "@components/Atoms/Input";
 import Textarea from "@components/Atoms/Textarea";
+import Header from "@components/Atoms/Header";
 import Footer from "@components/Atoms/Footer";
+
 
 export default function Home() {
     return (
         <>
+            <Header />
             <Section className="h-screen flex items-center">
                 <div>
                     <h1 className="text-6xl font-extrabold leading-tight">

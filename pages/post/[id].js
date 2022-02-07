@@ -1,6 +1,7 @@
 import Section from "@components/Sections/Section";
 import TextGradient from "@components/TextGradient";
 import Footer from "@components/Atoms/Footer";
+import Header from "@components/Atoms/Header";
 
 import Link from "next/link";
 
@@ -16,6 +17,7 @@ const postsDirectory = path.join(process.cwd(), "./pages/post/markdown");
 export default function Post({ id, metadata, content }) {
     return (
         <>
+            <Header />
             <Section>
                 <Link href="/post">
                     <a className="block mt-10 hover:underline">← Back to Posts</a>

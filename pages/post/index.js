@@ -1,5 +1,6 @@
 import Section from "@components/Sections/Section";
 import Footer from "@components/Atoms/Footer";
+import Header from "@components/Atoms/Header";
 import TextGradient from "@components/TextGradient";
 import Input from "@components/Atoms/Input";
 import Article from "@components/Atoms/Article";
@@ -24,6 +25,7 @@ export default function Post({ posts = [] }) {
 
     return (
         <>
+            <Header />
             <Section>
                 <Link href="/">
                     <a className="block mt-10 hover:underline">← Back to Home</a>
