@@ -17,7 +17,6 @@ export default function Header() {
     useEffect(() => {
         let animationID = null;
 
-        // console.log($transitionSVGPath.current.getAttribute("d"));
         const animate = () => {
             try {
                 if (isOpen) {
