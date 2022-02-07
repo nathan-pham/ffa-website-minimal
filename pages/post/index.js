@@ -53,7 +53,7 @@ export async function getStaticProps() {
     const posts = await Promise.all(
         filenames.map(async (post) => ({
             data: matter(await fs.readFile(path.join(postsDirectory, post), "utf8")).data,
-            href: `/post/${post.replace(/\.md$/, "")}`.toLowerCase(),
+            href: `/post/${post.replace(/\.md$/, "")}`,
         }))
     );
 

@@ -36,7 +36,7 @@ export default function Post({ id, metadata, content }) {
 
 export async function getStaticPaths() {
     const filenames = await fs.readdir(postsDirectory);
-    const paths = filenames.map((filename) => ({ params: { id: filename.replace(".md", "").toLowerCase() } }));
+    const paths = filenames.map((filename) => ({ params: { id: filename.replace(".md", "") } }));
 
     return {
         paths,
