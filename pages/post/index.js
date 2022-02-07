@@ -28,7 +28,7 @@ export default function Post({ posts = [] }) {
             <Header />
             <Section>
                 <Link href="/">
-                    <a className="block mt-10 hover:underline">← Back to Home</a>
+                    <a className="block mt-20 hover:underline">← Back to Home</a>
                 </Link>
 
                 <h1 className="text-6xl font-extrabold leading-tight">
@@ -39,8 +39,8 @@ export default function Post({ posts = [] }) {
 
                 <div className="mt-10">
                     {posts.filter(filterPosts).map((post, i) => (
-                        <div className="mt-4">
-                            <Article key={i} {...post.data} href={post.href || ""} />
+                        <div className="mt-4" key={i}>
+                            <Article {...post.data} href={post.href || ""} />
                         </div>
                     ))}
                 </div>

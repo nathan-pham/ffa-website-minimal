@@ -6,6 +6,7 @@ const lerp = (a, b, n) => (1 - n) * a + n * b;
 export default function Header() {
     const [isOpen, setIsOpen] = useState(false);
     const $transitionSVGPath = useRef(null);
+    const $transition = useRef(null);
     const y = useRef(100);
     const c = useRef(100);
 
@@ -22,10 +23,15 @@ export default function Header() {
                 if (isOpen) {
                     y.current = lerp(y.current, 0, 0.055);
                     c.current = lerp(c.current, 0, 0.075);
+                    $transition.current.style.display = "flex";
                     $transitionSVGPath.current.setAttribute("d", `M 0 ${y.current} L 0 100 100 100 100 ${y.current} C ${50} ${c.current}, ${50} ${c.current}, 0 ${y.current}`);
                 } else {
                     y.current = lerp(y.current, 100, 0.055);
                     c.current = lerp(c.current, 100, 0.075);
+
+                    if (Math.round(y.current) === 100 && Math.round(c.current) === 100) {
+                        $transition.current.style.display = "none";
+                    }
                     $transitionSVGPath.current.setAttribute("d", `M 0 ${y.current} L 0 100 100 100 100 ${y.current} C 50 ${c.current}, ${50} ${c.current}, 0 ${y.current}`);
                 }
             } catch (e) {
@@ -44,13 +50,13 @@ export default function Header() {
 
     return (
         <>
-            <header className="header">
+            <header className={["header", isOpen ? "" : "header--backdrop"].join(" ")}>
                 <div className={["header__menu", isOpen ? "header__menu--active" : ""].join(" ")} onClick={onClick}>
                     <span className="header__menu__bar header__menu__bar--top"></span>
                     <span className="header__menu__bar header__menu__bar--bottom"></span>
                 </div>
             </header>
-            <div className="transition">
+            <div className="transition" ref={$transition}>
                 <svg className="transition__svg" viewBox="0 0 100 100" preserveAspectRatio="none">
                     <path className="transition__svg__path" fill="#fcc42a" vectorEffect="non-scaling-stroke" d="M 0 100 L 100 100 100 100 0 100 C 0 0, 0 0, 0 100" ref={$transitionSVGPath} />
                 </svg>
@@ -83,9 +89,13 @@ export default function Header() {
                     display: flex;
                     align-items: center;
                     padding: 2rem 4rem;
+                    /*justify-content: flex-end;*/
+                    z-index: 5;
+                }
+
+                .header--backdrop {
                     background: rgba(255, 255, 255, 0.9);
                     backdrop-filter: blur(5px);
-                    z-index: 5;
                 }
 
                 .header__menu {
@@ -152,7 +162,6 @@ export default function Header() {
                     text-align: center;
                     z-index: 15;
                     opacity: 0;
-                    pointer-events: none;
                     transition: 0.1s ease;
                 }
 

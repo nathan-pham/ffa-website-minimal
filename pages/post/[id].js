@@ -20,7 +20,7 @@ export default function Post({ id, metadata, content }) {
             <Header />
             <Section>
                 <Link href="/post">
-                    <a className="block mt-10 hover:underline">← Back to Posts</a>
+                    <a className="block mt-20 hover:underline">← Back to Posts</a>
                 </Link>
                 <h1 className="text-6xl font-extrabold leading-tight">
                     You're reading: <TextGradient>{metadata.title}</TextGradient>
