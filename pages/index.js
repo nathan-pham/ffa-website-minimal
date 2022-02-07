@@ -16,7 +16,7 @@ import Root from "@components/Root";
 export default function Home() {
     return (
         <Root>
-            <Section className="h-screen flex items-center">
+            <Section className="flex items-center">
                 <div>
                     <h1 className="text-6xl font-extrabold leading-tight">
                         <TextGradient>Start building</TextGradient> the future of agriculture.

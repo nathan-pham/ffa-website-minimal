@@ -2,11 +2,11 @@
 https://deloro.farm
 
 ## TODO
-- [ ] Refactor Header Component
+- [x] Refactor Header Component
 - [x] Enhance SEO with Root Component
 - [ ] Farm Tour
-- [ ] Add "Edit" button to posts
+- [x] Add "Edit" button to posts
 - [ ] Add functionality to forms (Contact Form, Icons)
-- [ ] Hover states for posts
+- [x] Hover states for posts
 - [ ] Add photos
 - [ ] Loader?
