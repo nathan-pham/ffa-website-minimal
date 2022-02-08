@@ -13,14 +13,14 @@ import { promises as fs } from "fs";
 import * as path from "path";
 import Root from "@components/Root";
 
-const postsDirectory = path.join(process.cwd(), "./pages/post/markdown");
+const postsDirectory = path.join(process.cwd(), "./pages/posts/markdown");
 
 export default function Post({ metadata, content }) {
     return (
         <Root title={metadata.title}>
             <Section>
                 <div className="mt-4">
-                    <Link href="/posts"><a className="hover:underline">← Back to Posts</a></Link> • <a target="_blank" rel="noreferrer" href={`https://github.com/nathan-pham/ffa-website-minimal/blob/main/pages/post/markdown/${metadata.title}.md`} className="hover:underline cursor-pointer">Edit</a>
+                    <Link href="/posts"><a className="hover:underline">← Back to Posts</a></Link> • <a target="_blank" rel="noreferrer" href={`https://github.com/nathan-pham/ffa-website-minimal/blob/main/pages/posts/markdown/${metadata.title}.md`} className="hover:underline cursor-pointer">Edit</a>
                 </div>
                 <h1 className="text-6xl font-extrabold leading-tight">
                 <TextGradient>Reading:</TextGradient> {metadata.title}

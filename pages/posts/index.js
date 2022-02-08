@@ -13,7 +13,7 @@ import matter from "gray-matter";
 import { promises as fs } from "fs";
 import * as path from "path";
 
-const postsDirectory = path.join(process.cwd(), "./pages/post/markdown");
+const postsDirectory = path.join(process.cwd(), "./pages/posts/markdown");
 
 export default function Post({ posts = [] }) {
     const [search, setSearch] = useState("");
@@ -55,7 +55,7 @@ export async function getStaticProps() {
     const posts = await Promise.all(
         filenames.map(async (post) => ({
             data: matter(await fs.readFile(path.join(postsDirectory, post), "utf8")).data,
-            href: `/post/${post.replace(/\.md$/, "")}`,
+            href: `/posts/${post.replace(/\.md$/, "")}`,
         }))
     );
 
