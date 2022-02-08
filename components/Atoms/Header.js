@@ -45,7 +45,7 @@ export default function Header() {
         };
     }, [isOpen]);
 
-    const links = ["Home", "Tour", "Posts", "Gallery", "Officers"];
+    const links = ["Home", "Tour", "Posts", "About", "Gallery"];
 
     return (
         <>

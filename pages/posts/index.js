@@ -5,7 +5,6 @@ import Input from "@components/Atoms/Form/Input";
 import Article from "@components/Atoms/Article";
 import Root from "@components/Root";
 
-
 import { useState } from "react";
 import Link from "next/link";
 
@@ -23,6 +22,7 @@ export default function Post({ posts = [] }) {
     };
 
     const filterPosts = (post) => post.data.title.toLowerCase().includes(search.toLowerCase()) || post.data.description.toLowerCase().includes(search.toLowerCase());
+    const sortPosts = (a, b) => new Date(a.data.date) - new Date(b.data.date);
 
     return (
         <Root title="Posts">
@@ -38,11 +38,15 @@ export default function Post({ posts = [] }) {
                 <Input placeholder="keyword or title" className="mt-2 w-80" value={search} onChange={handleSearch} />
 
                 <div className="mt-10">
-                    {posts.filter(filterPosts).map((post, i) => (
-                        <div className="mt-4" key={i}>
-                            <Article {...post.data} href={post.href || ""} />
-                        </div>
-                    ))}
+                    {posts
+                        .filter(filterPosts)
+                        .sort(sortPosts)
+                        .reverse()
+                        .map((post, i) => (
+                            <div className="mt-4" key={i}>
+                                <Article {...post.data} href={post.href || ""} />
+                            </div>
+                        ))}
                 </div>
             </Section>
             <Footer />

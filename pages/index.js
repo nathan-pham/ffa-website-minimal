@@ -62,8 +62,8 @@ export default function Home() {
                     <ImageSection />
                 </div>
 
-                <div className="flex gap-4 w-full justify-center items-center mt-8">
-                    <Link href="/officers">
+                <div className="flex gap-4 w-full justify-center items-center mt-6">
+                    <Link href="/about">
                         <a>
                             <SecondaryButton>Officers</SecondaryButton>
                         </a>
@@ -81,7 +81,7 @@ export default function Home() {
                     <Step number={3} circleGradient="from-purple-500 to-pink-400" lineGradient="from-purple-500" />
 
                     <h2 className="my-6 text-5xl font-bold">
-                        Trusted by <TextGradient gradient="from-purple-500 to-pink-400">local businesses.</TextGradient>
+                        Trusted by <TextGradient gradient="from-purple-500 to-pink-400">amazing businesses.</TextGradient>
                     </h2>
                     <p className="text-gray-500 text-xl mb-8">You're in good hands. Promise.</p>
                     <PrimaryButton>Sponsor Us</PrimaryButton>
@@ -97,10 +97,4 @@ export default function Home() {
             <Footer />
         </Root>
     );
-}
-{
-    /* Name="flex gap-4 mt-6">
-                                <img src="icons/instagram.png" className="w-16 rounded-lg" />
-                                <img src="icons/remind.png" className="w-16 rounded-lg" />
-                            </div> */
 }

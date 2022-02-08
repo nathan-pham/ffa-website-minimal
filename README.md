@@ -2,9 +2,9 @@
 https://deloro.farm
 
 ## TODO
-- [ ] Farm Tour
-- [ ] Add functionality to forms (Contact Form, Icons)
-- [ ] Loader?
-- [ ] Responsive design
-- [ ] Gallery of Images
-- [ ] Officers
+- Farm Tour
+- Add functionality to forms
+- Loader?
+- Responsive design
+- Gallery of Images
+- Officers (About, Contact)
