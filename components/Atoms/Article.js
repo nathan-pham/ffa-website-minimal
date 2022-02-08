@@ -9,7 +9,7 @@ export default function Article({ title, description, href }) {
     });
 
     return (
-        <article className="p-6 border border-gray-400 rounded-lg transition-all hover:-translate-y-2 hover:shadow-lg">
+        <article className="p-6 border rounded-lg transition-all hover:-translate-y-2 hover:shadow-lg">
             <h2 className="text-4xl font-bold">{_title}</h2>
             <p className="text-gray-500 text-lg mt-2">{description}</p>
             <Link href={href}>

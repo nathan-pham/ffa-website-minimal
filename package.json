@@ -12,6 +12,7 @@
     "next-pwa": "^5.4.4",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
+    "react-ionicons": "^4.2.0",
     "regexify-string": "^1.0.17",
     "remark": "^14.0.2",
     "remark-html": "^15.0.1",

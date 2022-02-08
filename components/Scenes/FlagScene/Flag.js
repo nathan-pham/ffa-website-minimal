@@ -20,7 +20,7 @@ export default function Flag() {
 
     return (
         <mesh scale={1.25}>
-            <planeBufferGeometry attach="geometry" args={[6, 4, 18, 12]} />
+            <planeBufferGeometry attach="geometry" args={[7, 4, 21, 12]} />
             <shaderMaterial
                 uniforms={uniforms}
                 fragmentShader={`
