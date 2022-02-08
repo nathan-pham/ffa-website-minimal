@@ -2,9 +2,11 @@
 https://deloro.farm
 
 ## TODO
-- Farm Tour
-- Add functionality to forms
+- Add functionality to forms -> Node Mailer?
 - Loader?
 - Responsive design
-- Gallery of Images
-- Officers (About, Contact)
+- Farm Tour (experience)
+- Gallery of Images (experience)
+- Officer Images
+
+- enable full screen on experiences
