@@ -8,5 +8,8 @@ https://deloro.farm
 - [x] Add "Edit" button to posts
 - [ ] Add functionality to forms (Contact Form, Icons)
 - [x] Hover states for posts
-- [ ] Add photos
+- [x] Add photos
 - [ ] Loader?
+- [ ] Responsive design
+- [ ] Gallery of Images
+- [ ] Officers

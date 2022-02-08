@@ -1,17 +1,17 @@
 import Section from "@components/Sections/Section";
 import Footer from "@components/Atoms/Footer";
-import Header from "@components/Atoms/Header";
 import TextGradient from "@components/TextGradient";
-import Input from "@components/Atoms/Input";
+import Input from "@components/Atoms/Form/Input";
 import Article from "@components/Atoms/Article";
-import matter from "gray-matter";
+import Root from "@components/Root";
+
 
 import { useState } from "react";
 import Link from "next/link";
 
+import matter from "gray-matter";
 import { promises as fs } from "fs";
 import * as path from "path";
-import Root from "@components/Root";
 
 const postsDirectory = path.join(process.cwd(), "./pages/post/markdown");
 
@@ -31,11 +31,11 @@ export default function Post({ posts = [] }) {
                     <a className="block hover:underline">← Back to Home</a>
                 </Link>
 
-                <h1 className="text-6xl font-extrabold leading-tight">
+                <h1 className="text-6xl font-extrabold leading-tight mt-4">
                     <TextGradient>Search</TextGradient> through posts
                 </h1>
                 <p className="mt-2 text-gray-500 text-xl">Find the information you need about Del Oro FFA.</p>
-                <Input placeholder="keyword or title" className="mt-6 w-80" value={search} onChange={handleSearch} />
+                <Input placeholder="keyword or title" className="mt-2 w-80" value={search} onChange={handleSearch} />
 
                 <div className="mt-10">
                     {posts.filter(filterPosts).map((post, i) => (

@@ -19,7 +19,7 @@ export default function Post({ metadata, content }) {
     return (
         <Root title={metadata.title}>
             <Section>
-                <div>
+                <div className="mt-4">
                     <Link href="/post"><a className="hover:underline">← Back to Posts</a></Link> • <a target="_blank" rel="noreferrer" href={`https://github.com/nathan-pham/ffa-website-minimal/blob/main/pages/post/markdown/${metadata.title}.md`} className="hover:underline cursor-pointer">Edit</a>
                 </div>
                 <h1 className="text-6xl font-extrabold leading-tight">

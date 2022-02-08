@@ -4,14 +4,13 @@ import ImageSection from "@components/Sections/ImageSection";
 import Step from "@components/Step";
 
 import TextGradient from "@components/TextGradient";
-import { PrimaryButton } from "@components/Atoms/Button";
-import Input from "@components/Atoms/Input";
-import Textarea from "@components/Atoms/Textarea";
-import Header from "@components/Atoms/Header";
+import { PrimaryButton, SecondaryButton } from "@components/Atoms/Button";
 import Footer from "@components/Atoms/Footer";
 
 import Root from "@components/Root";
+import RegisterForm from "@components/Atoms/Form/RegisterForm";
 
+import Link from "next/link";
 
 export default function Home() {
     return (
@@ -24,18 +23,15 @@ export default function Home() {
                     <p className="mt-6 mb-8 text-gray-500 text-xl">
                         Del Oro FFA is a youth organization that provides the best learning experience with an obsessive focus on leadership and career skills.
                     </p>
-                    <form className="flex justify-items-stretch items-stretch gap-4">
-                        <Input name="landing_email" id="landing_email" placeholder="janedoe@puhsd.k12.ca.us" className="w-80" />
-                        <PrimaryButton>Start Learning</PrimaryButton>
-                    </form>
+                    <RegisterForm />
                 </div>
 
-                <img src="illustrations/chicken.svg" className="w-5/12" />
+                <img src="illustrations/chicken.svg" className="w-5/12 hidden lg:inline-flex" />
             </Section>
 
             <Section>
                 <div className="text-center">
-                    <p className="uppercase font-mono text-sm font-semibold tracking-widest mb-8">Explore the Del Oro FFA Way</p>
+                    <p className="uppercase font-mono text-sm font-semibold tracking-widest my-8">Explore the Del Oro FFA Way</p>
 
                     <Step number={1} />
 
@@ -65,6 +61,19 @@ export default function Home() {
                 <div className="mt-16">
                     <ImageSection />
                 </div>
+
+                <div className="flex gap-4 w-full justify-center items-center mt-8">
+                    <Link href="/officers">
+                        <a>
+                            <SecondaryButton>Officers</SecondaryButton>
+                        </a>
+                    </Link>
+                    <Link href="/gallery">
+                        <a>
+                            <PrimaryButton>Gallery</PrimaryButton>
+                        </a>
+                    </Link>
+                </div>
             </Section>
 
             <Section className="mt-10">
@@ -81,45 +90,17 @@ export default function Home() {
 
             <Section className="mt-20">
                 <div className="text-center">
-                    <p className="uppercase font-mono text-sm font-semibold tracking-widest mb-8">Begin your FFA journey</p>
-                </div>
-
-                <div className="grid grid-cols-2 gap-8">
-                    <div>
-                        <h2 className="text-3xl font-bold">Ready to do something epic?</h2>
-
-                        <form className="rounded-lg shadow-xl p-6 flex flex-col mx-auto mt-6">
-                            <Input forLabel="First & Last Name" name="name" placeholder="Jane Doe " />
-
-                            <div className="mt-6 flex flex-col">
-                                <Input forLabel="School Email" name="email" placeholder="janedoe@puhsd.k12.ca.us" className="mt-2" />
-                            </div>
-
-                            <div className="mt-6 flex flex-col">
-                                <Textarea forLabel="Additional Details" name="details" placeholder="Tell us about yourself and why you're interested!" className="mt-2" />
-                            </div>
-
-                            <div className="mt-6 text-right">
-                                <PrimaryButton>Send</PrimaryButton>
-                            </div>
-                        </form>
-                    </div>
-
-                    <div>
-                        <h2 className="text-3xl font-bold">Connect with us.</h2>
-                        <div className="border bg-gray-50 p-6 mt-6 rounded-lg">
-                            <p className="text-lg">Get important reminders and announcements for workdays, competitions, and events.</p>
-
-                            <div className="flex gap-4 mt-6">
-                                <img src="icons/instagram.png" className="w-16 rounded-lg" />
-                                <img src="icons/remind.png" className="w-16 rounded-lg" />
-                            </div>
-                        </div>
-                    </div>
+                    <p className="uppercase font-mono text-sm font-semibold tracking-widest my-4">Begin your FFA journey</p>
                 </div>
             </Section>
-
+            <RegisterForm variant="footer" />
             <Footer />
         </Root>
     );
+}
+{
+    /* Name="flex gap-4 mt-6">
+                                <img src="icons/instagram.png" className="w-16 rounded-lg" />
+                                <img src="icons/remind.png" className="w-16 rounded-lg" />
+                            </div> */
 }

@@ -45,9 +45,12 @@ export default function Header() {
         };
     }, [isOpen]);
 
+    const links = ["Home", "Tour", "Posts", "Gallery", "Officers"];
+
     return (
         <>
-            <header className={["header", isOpen ? "" : "header--backdrop"].join(" ")}>
+            <div className="header__backdrop"></div>
+            <header className="header">
                 <div className={["header__menu", isOpen ? "header__menu--active" : ""].join(" ")} onClick={onClick}>
                     <span className="header__menu__bar header__menu__bar--top"></span>
                     <span className="header__menu__bar header__menu__bar--bottom"></span>
@@ -59,21 +62,13 @@ export default function Header() {
                 </svg>
 
                 <ul className={["transition__list", isOpen ? "transition__list--active" : ""].join(" ")}>
-                    <li className="transition__list__item hover:underline">
-                        <Link href="/">
-                            <a>Home</a>
-                        </Link>
-                    </li>
-                    <li className="transition__list__item hover:underline">
-                        <Link href="/post">
-                            <a>Posts</a>
-                        </Link>
-                    </li>
-                    <li className="transition__list__item hover:underline">
-                        <Link href="/tour">
-                            <a>Tour</a>
-                        </Link>
-                    </li>
+                    {links.map((link, i) => (
+                        <li className="transition__list__item hover:underline" key={i}>
+                            <Link href={`/${link.toLowerCase()}`}>
+                                <a>{link}</a>
+                            </Link>
+                        </li>
+                    ))}
                 </ul>
             </div>{" "}
             <style jsx>{`
@@ -86,11 +81,17 @@ export default function Header() {
                     display: flex;
                     align-items: center;
                     padding: 2rem 4rem;
-                    /*justify-content: flex-end;*/
-                    z-index: 5;
+                    z-index: 12;
+                    background: none;
                 }
 
-                .header--backdrop {
+                .header__backdrop {
+                    position: fixed;
+                    left: 0;
+                    top: 0;
+                    width: 100%;
+                    height: 4.625rem;
+                    z-index: 2;
                     background: rgba(255, 255, 255, 0.9);
                     backdrop-filter: blur(5px);
                 }
@@ -103,6 +104,7 @@ export default function Header() {
                     width: 1.875rem;
                     height: 0.625rem;
                     cursor: pointer;
+                    z-index: 15;
                 }
 
                 .header__menu__bar {
@@ -143,15 +145,15 @@ export default function Header() {
                     justify-content: center;
                     align-items: center;
                     overflow-x: hidden;
+                    z-index: 11;
                 }
 
                 .transition__svg {
-                    position: absolute;
+                    position: fixed;
                     left: 0;
                     top: 0;
                     height: 100%;
                     width: 100%;
-                    z-index: 10;
                 }
 
                 .transition__list {

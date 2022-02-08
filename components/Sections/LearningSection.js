@@ -20,7 +20,7 @@ export default function LearningSection() {
 
     return (
         <div className="flex">
-            <img src="illustrations/learning.svg" className="w-5/12" />
+            <img src="illustrations/learning.svg" className="w-5/12 hidden lg:inline-flex" />
 
             <div>
                 {threeRingModel.map(({ title, description }, i) => (
