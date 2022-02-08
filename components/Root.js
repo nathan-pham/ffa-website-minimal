@@ -35,7 +35,7 @@ export default function Root({ title = "Home", children }) {
                 <meta httpEquiv="Content-Security-Policy" content="upgrade-insecure-requests" />
             </Head>
             <Header />
-            <div className="mt-20">{children}</div>
+            <div className="mt-28">{children}</div>
         </>
     );
 }

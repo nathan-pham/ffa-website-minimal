@@ -51,6 +51,13 @@ export default function Header() {
         <>
             <div className="header__backdrop"></div>
             <header className="header">
+                <h1 className="font-semibold text-xl">
+                    <Link href="/">
+                        <a className="flex items-center">
+                            <img src="/favicon-32x32.png" className="mr-2" /> Del Oro FFA
+                        </a>
+                    </Link>
+                </h1>
                 <div className={["header__menu", isOpen ? "header__menu--active" : ""].join(" ")} onClick={onClick}>
                     <span className="header__menu__bar header__menu__bar--top"></span>
                     <span className="header__menu__bar header__menu__bar--bottom"></span>
@@ -64,13 +71,13 @@ export default function Header() {
                 <ul className={["transition__list", isOpen ? "transition__list--active" : ""].join(" ")}>
                     {links.map((link, i) => (
                         <li className="transition__list__item hover:underline" key={i}>
-                            <Link href={`/${link.toLowerCase()}`}>
+                            <Link href={link == "Home" ? "/" : `/${link.toLowerCase()}`}>
                                 <a>{link}</a>
                             </Link>
                         </li>
                     ))}
                 </ul>
-            </div>{" "}
+            </div>
             <style jsx>{`
                 /* HEADER */
                 .header {
@@ -80,7 +87,8 @@ export default function Header() {
                     width: 100%;
                     display: flex;
                     align-items: center;
-                    padding: 2rem 4rem;
+                    justify-content: space-between;
+                    padding: 1.5rem 4rem;
                     z-index: 12;
                     background: none;
                 }
@@ -90,7 +98,7 @@ export default function Header() {
                     left: 0;
                     top: 0;
                     width: 100%;
-                    height: 4.625rem;
+                    height: 5rem;
                     z-index: 2;
                     background: rgba(255, 255, 255, 0.9);
                     backdrop-filter: blur(5px);

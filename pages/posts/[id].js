@@ -22,12 +22,13 @@ export default function Post({ metadata, content }) {
         pattern: /<.*?>/gim,
         decorator: (match, index) => <TextGradient>{match.slice(1, -1)}</TextGradient>,
         input: metadata.title,
-    })
-    
+    });
+
     return (
         <Root title={metadata.title}>
             <Section>
-                <div className="mt-4">
+                <h1 className="text-6xl font-extrabold leading-tight">{title}</h1>
+                <div className="mt-2">
                     <Link href="/posts">
                         <a className="hover:underline">← Back to Posts</a>
                     </Link>{" "}
@@ -41,7 +42,6 @@ export default function Post({ metadata, content }) {
                         Edit
                     </a>
                 </div>
-                <h1 className="text-6xl font-extrabold leading-tight mt-4">{title}</h1>
                 <div className="prose prose-slate w-full mt-4">
                     <div dangerouslySetInnerHTML={{ __html: content }} />
                 </div>

@@ -12,6 +12,8 @@ import matter from "gray-matter";
 import { promises as fs } from "fs";
 import * as path from "path";
 
+import GenericTitle from "@components/Sections/GenericTitle";
+
 const postsDirectory = path.join(process.cwd(), "./pages/posts/markdown");
 
 export default function Post({ posts = [] }) {
@@ -27,15 +29,15 @@ export default function Post({ posts = [] }) {
     return (
         <Root title="Posts">
             <Section>
-                <Link href="/">
-                    <a className="block hover:underline">← Back to Home</a>
-                </Link>
-
-                <h1 className="text-6xl font-extrabold leading-tight mt-4">
-                    <TextGradient>Search</TextGradient> through posts
-                </h1>
-                <p className="mt-2 text-gray-500 text-xl">Find the information you need about Del Oro FFA.</p>
-                <Input placeholder="keyword or title" className="mt-2 w-80" value={search} onChange={handleSearch} />
+                <GenericTitle
+                    title={
+                        <>
+                            <TextGradient>Search</TextGradient> through posts
+                        </>
+                    }
+                    description="Find the information you need about Del Oro FFA."
+                />
+                <Input placeholder="keyword or title" className="mt-6 w-80" value={search} onChange={handleSearch} />
 
                 <div className="mt-10">
                     {posts

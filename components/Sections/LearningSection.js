@@ -30,7 +30,7 @@ export default function LearningSection() {
                     </div>
                 ))}
 
-                <Link href="/post">
+                <Link href="/posts">
                     <a>
                         <PrimaryButton className="mt-12">Learn More</PrimaryButton>
                     </a>
