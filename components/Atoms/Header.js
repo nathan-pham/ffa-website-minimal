@@ -20,12 +20,12 @@ export default function Header() {
         const animate = () => {
             try {
                 if (isOpen) {
-                    y.current = lerp(y.current, 0, 0.06);
-                    c.current = lerp(c.current, 0, 0.08);
+                    y.current = lerp(y.current, 0, 0.08);
+                    c.current = lerp(c.current, 0, 0.1);
                     $transition.current.style.pointerEvents = "auto";
                     $transitionSVGPath.current.setAttribute("d", `M 0 ${y.current} L 0 100 100 100 100 ${y.current} C ${50} ${c.current}, ${50} ${c.current}, 0 ${y.current}`);
                 } else {
-                    y.current = lerp(y.current, 100, 0.06);
+                    y.current = lerp(y.current, 100, 0.065);
                     c.current = lerp(c.current, 100, 0.08);
 
                     $transition.current.style.pointerEvents = "none";

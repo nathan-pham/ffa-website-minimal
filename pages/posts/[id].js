@@ -17,7 +17,7 @@ import regexifyString from "regexify-string";
 
 const postsDirectory = path.join(process.cwd(), "./pages/posts/markdown");
 
-export default function Post({ metadata, content }) {
+export default function Post({ metadata, content, id }) {
     const title = regexifyString({
         pattern: /<.*?>/gim,
         decorator: (match, index) => <TextGradient>{match.slice(1, -1)}</TextGradient>,
@@ -36,7 +36,7 @@ export default function Post({ metadata, content }) {
                     <a
                         target="_blank"
                         rel="noreferrer"
-                        href={`https://github.com/nathan-pham/ffa-website-minimal/blob/main/pages/posts/markdown/${metadata.title}.md`}
+                        href={`https://github.com/nathan-pham/ffa-website-minimal/blob/main/pages/posts/markdown/${id}.md`}
                         className="hover:underline cursor-pointer"
                     >
                         Edit
