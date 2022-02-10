@@ -46,7 +46,7 @@ export default function Post({ posts = [] }) {
                         .reverse()
                         .map((post, i) => (
                             <div className="mt-4" key={i}>
-                                <Article {...post.data} href={post.href || ""} />
+                                <Article {...post.data} href={post.href || ""} key={i} />
                             </div>
                         ))}
                 </div>

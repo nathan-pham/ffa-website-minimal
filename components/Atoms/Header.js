@@ -50,7 +50,7 @@ export default function Header() {
     return (
         <>
             <div className="header__backdrop"></div>
-            <header className="header">
+            <header className="header px-16 py-6">
                 <h1 className="font-semibold text-xl">
                     <Link href="/">
                         <a className="flex items-center">
@@ -88,7 +88,6 @@ export default function Header() {
                     display: flex;
                     align-items: center;
                     justify-content: space-between;
-                    padding: 1.5rem 4rem;
                     z-index: 12;
                     background: none;
                 }

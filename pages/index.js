@@ -62,7 +62,7 @@ export default function Home() {
                     <ImageSection />
                 </div>
 
-                <div className="flex gap-4 w-full justify-center items-center mt-6">
+                <div className="flex gap-6 w-full justify-center items-center mt-6">
                     <Link href="/about">
                         <a>
                             <SecondaryButton>Officers</SecondaryButton>
