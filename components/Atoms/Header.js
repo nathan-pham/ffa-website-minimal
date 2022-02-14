@@ -47,6 +47,8 @@ export default function Header() {
 
     const links = ["Home", "Tour", "Posts", "About", "Gallery"];
 
+    // TODO: add bg
+
     return (
         <>
             <div className="header__backdrop"></div>

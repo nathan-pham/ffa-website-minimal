@@ -1,7 +1,7 @@
 import Header from "@components/Atoms/Header";
 import Head from "next/head";
 
-export default function Root({ title = "Home", children }) {
+export default function Root({ title = "Home", header = true, children }) {
     const _title = `Del Oro FFA | ${title}`;
     const _description = "Del Oro FFA is a youth organization that provides the best learning experience with an obsessive focus on leadership and career skills.";
 
@@ -34,8 +34,8 @@ export default function Root({ title = "Home", children }) {
                 <meta name="HandheldFriendly" content="true" />
                 <meta httpEquiv="Content-Security-Policy" content="upgrade-insecure-requests" />
             </Head>
-            <Header />
-            <div className="mt-28">{children}</div>
+            {header && <Header />}
+            <div className={header ? "mt-28" : ""}>{children}</div>
         </>
     );
 }

@@ -45,9 +45,7 @@ export default function Post({ posts = [] }) {
                         .sort(sortPosts)
                         .reverse()
                         .map((post, i) => (
-                            <div className="mt-4" key={i}>
-                                <Article {...post.data} href={post.href || ""} key={i} />
-                            </div>
+                            <Article {...post.data} href={post.href || ""} key={i} />
                         ))}
                 </div>
             </Section>
