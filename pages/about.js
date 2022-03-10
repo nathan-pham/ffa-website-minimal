@@ -13,19 +13,19 @@ const profiles = [
         src: "dvorak.jpg",
         email: "rdvorak@puhsd.k12.ca.us",
         name: "Mrs. Dvorak",
-        position: "FFA Advisor / CTE Agriscience Program"
+        position: "FFA Advisor / CTE Agriscience Program",
     },
     {
         src: "belli.jpg",
         email: "sbelli@puhsd.k12.ca.us",
         name: "Mrs. Belli",
-        position: "FFA Advisor / CTE Agriculture Chemistry"
+        position: "FFA Advisor / CTE Agriculture Chemistry",
     },
     {
         src: "pahl.jpg",
         email: "mpahl@puhsd.k12.ca.us",
         name: "Mr. Pahl",
-        position: "FFA Advisor / CTE Welding Technology"
+        position: "FFA Advisor / CTE Welding Technology",
     },
     {
         src: "ella.webp",
@@ -55,7 +55,7 @@ const profiles = [
         src: "maddie.png",
         email: "floresm23@puhsd.k12.ca.us",
         position: "Sentinel",
-        name: "Maddie Flores"
+        name: "Maddie Flores",
     },
     {
         src: "emmie.png",
@@ -75,21 +75,23 @@ export default function About() {
     return (
         <Root title="About">
             <Section>
-                <GenericTitle
-                    title={
-                        <>
-                            <TextGradient>All about</TextGradient> our team
-                        </>
-                    }
-                    description="Meet our fantastic team!"
-                />
-                <FlagScene />
-                <div className="grid grid-cols-3 auto-rows-fr gap-6 mt-6">
-                    {profiles.map((profile, i) => (
-                        <ProfileCard key={i} {...profile} />
-                    ))}
+                <div className="text-center my-10 mx-auto max-w-5xl">
+                    <GenericTitle
+                        title={
+                            <>
+                                <TextGradient>All about</TextGradient> the team
+                            </>
+                        }
+                        description="Meet our fantastic officers and advisors!"
+                    />
+                    <FlagScene />
+                    <div className="grid grid-cols-3 auto-rows-fr gap-6 mt-6">
+                        {profiles.map((profile, i) => (
+                            <ProfileCard key={i} {...profile} />
+                        ))}
 
-                    <AddProfile />
+                        <AddProfile />
+                    </div>
                 </div>
             </Section>
             <Footer />
