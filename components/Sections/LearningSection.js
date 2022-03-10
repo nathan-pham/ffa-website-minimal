@@ -1,6 +1,3 @@
-import { PrimaryButton } from "@components/Atoms/Button";
-import Link from "next/link";
-
 // prettier-ignore
 const threeRingModel = [
     { 
@@ -36,12 +33,6 @@ export default function LearningSection() {
                     <p className="text-gray-500 text-xl mt-2">{description}</p>
                 </div>
             ))}
-
-            <Link href="/posts">
-                <a>
-                    <PrimaryButton className="mt-12">Learn More</PrimaryButton>
-                </a>
-            </Link>
         </div>
     );
 }

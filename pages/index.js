@@ -53,6 +53,14 @@ export default function Home() {
                 <div className="mt-16">
                     <LearningSection />
                 </div>
+
+                <div className="w-fit mx-auto mt-10">
+                    <Link href="/posts">
+                        <a>
+                            <PrimaryButton>Learn More</PrimaryButton>
+                        </a>
+                    </Link>
+                </div>
             </Section>
 
             <Section className="mt-10">
