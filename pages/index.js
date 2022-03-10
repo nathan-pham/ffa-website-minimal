@@ -80,7 +80,7 @@ export default function Home() {
                     <ImageSection />
                 </div>
 
-                <div className="flex gap-6 w-full justify-center items-center mt-6">
+                <div className="flex gap-6 w-full justify-center items-center mt-10">
                     <Link href="/about">
                         <a>
                             <PrimaryButton>Officers</PrimaryButton>
@@ -103,9 +103,13 @@ export default function Home() {
                             amazing businesses.
                         </TextGradient>
                     </h2>
-                    <p className="text-gray-500 text-xl mb-8">
+                    <p className="text-gray-500 text-xl">
                         You're in good hands. Promise.
                     </p>
+
+                    <div className="flex justify-center mt-10">
+                        <PrimaryButton>Sponsor Us</PrimaryButton>
+                    </div>
                 </div>
             </Section>
 
