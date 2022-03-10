@@ -23,7 +23,9 @@ export default function Post({ posts = [] }) {
         setSearch(e.target.value);
     };
 
-    const filterPosts = (post) => post.data.title.toLowerCase().includes(search.toLowerCase()) || post.data.description.toLowerCase().includes(search.toLowerCase());
+    const filterPosts = (post) =>
+        post.data.title.toLowerCase().includes(search.toLowerCase()) ||
+        post.data.description.toLowerCase().includes(search.toLowerCase());
     const sortPosts = (a, b) => new Date(a.data.date) - new Date(b.data.date);
 
     return (
@@ -37,7 +39,12 @@ export default function Post({ posts = [] }) {
                     }
                     description="Find the information you need about Del Oro FFA."
                 />
-                <Input placeholder="keyword or title" className="mt-6 w-80" value={search} onChange={handleSearch} />
+                <Input
+                    placeholder="keyword or title"
+                    className="mt-6 w-80"
+                    value={search}
+                    onChange={handleSearch}
+                />
 
                 <div className="mt-10">
                     {posts
@@ -45,7 +52,11 @@ export default function Post({ posts = [] }) {
                         .sort(sortPosts)
                         .reverse()
                         .map((post, i) => (
-                            <Article {...post.data} href={post.href || ""} key={i} />
+                            <Article
+                                {...post.data}
+                                href={post.href || ""}
+                                key={`article-${i}`}
+                            />
                         ))}
                 </div>
             </Section>
@@ -58,7 +69,9 @@ export async function getStaticProps() {
     const filenames = await fs.readdir(postsDirectory);
     const posts = await Promise.all(
         filenames.map(async (post) => ({
-            data: matter(await fs.readFile(path.join(postsDirectory, post), "utf8")).data,
+            data: matter(
+                await fs.readFile(path.join(postsDirectory, post), "utf8")
+            ).data,
             href: `/posts/${post.replace(/\.md$/, "")}`,
         }))
     );

@@ -23,13 +23,25 @@ export default function Header() {
                     y.current = lerp(y.current, 0, 0.08);
                     c.current = lerp(c.current, 0, 0.1);
                     $transition.current.style.pointerEvents = "auto";
-                    $transitionSVGPath.current.setAttribute("d", `M 0 ${y.current} L 0 100 100 100 100 ${y.current} C ${50} ${c.current}, ${50} ${c.current}, 0 ${y.current}`);
+                    $transitionSVGPath.current.setAttribute(
+                        "d",
+                        `M 0 ${y.current} L 0 100 100 100 100 ${
+                            y.current
+                        } C ${50} ${c.current}, ${50} ${c.current}, 0 ${
+                            y.current
+                        }`
+                    );
                 } else {
                     y.current = lerp(y.current, 100, 0.065);
                     c.current = lerp(c.current, 100, 0.08);
 
                     $transition.current.style.pointerEvents = "none";
-                    $transitionSVGPath.current.setAttribute("d", `M 0 ${y.current} L 0 100 100 100 100 ${y.current} C 50 ${c.current}, ${50} ${c.current}, 0 ${y.current}`);
+                    $transitionSVGPath.current.setAttribute(
+                        "d",
+                        `M 0 ${y.current} L 0 100 100 100 100 ${
+                            y.current
+                        } C 50 ${c.current}, ${50} ${c.current}, 0 ${y.current}`
+                    );
                 }
             } catch (e) {
                 cancelAnimationFrame(animationID);
@@ -45,7 +57,7 @@ export default function Header() {
         };
     }, [isOpen]);
 
-    const links = ["Home", "Tour", "Posts", "About", "Gallery"];
+    const links = ["Home", "Posts", "About", "Gallery"];
 
     // TODO: add bg
 
@@ -56,24 +68,55 @@ export default function Header() {
                 <h1 className="font-semibold text-xl">
                     <Link href="/">
                         <a className="flex items-center">
-                            <img src="/favicon-32x32.png" className="mr-2" /> Del Oro FFA
+                            <img src="/favicon-32x32.png" className="mr-2" />{" "}
+                            Del Oro FFA
                         </a>
                     </Link>
                 </h1>
-                <div className={["header__menu", isOpen ? "header__menu--active" : ""].join(" ")} onClick={onClick}>
+                <div
+                    className={[
+                        "header__menu",
+                        isOpen ? "header__menu--active" : "",
+                    ].join(" ")}
+                    onClick={onClick}
+                >
                     <span className="header__menu__bar header__menu__bar--top"></span>
                     <span className="header__menu__bar header__menu__bar--bottom"></span>
                 </div>
             </header>
             <div className="transition" ref={$transition}>
-                <svg className="transition__svg" viewBox="0 0 100 100" preserveAspectRatio="none">
-                    <path className="transition__svg__path" fill="#fcc42a" vectorEffect="non-scaling-stroke" d="M 0 100 L 100 100 100 100 0 100 C 0 0, 0 0, 0 100" ref={$transitionSVGPath} />
+                <svg
+                    className="transition__svg"
+                    viewBox="0 0 100 100"
+                    preserveAspectRatio="none"
+                >
+                    <path
+                        className="transition__svg__path"
+                        fill="#fcc42a"
+                        vectorEffect="non-scaling-stroke"
+                        d="M 0 100 L 100 100 100 100 0 100 C 0 0, 0 0, 0 100"
+                        ref={$transitionSVGPath}
+                    />
                 </svg>
 
-                <ul className={["transition__list", isOpen ? "transition__list--active" : ""].join(" ")}>
+                <ul
+                    className={[
+                        "transition__list",
+                        isOpen ? "transition__list--active" : "",
+                    ].join(" ")}
+                >
                     {links.map((link, i) => (
-                        <li className="transition__list__item hover:underline" key={i}>
-                            <Link href={link == "Home" ? "/" : `/${link.toLowerCase()}`}>
+                        <li
+                            className="transition__list__item hover:underline"
+                            key={i}
+                        >
+                            <Link
+                                href={
+                                    link == "Home"
+                                        ? "/"
+                                        : `/${link.toLowerCase()}`
+                                }
+                            >
                                 <a>{link}</a>
                             </Link>
                         </li>
