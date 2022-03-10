@@ -19,7 +19,8 @@
     "regexify-string": "^1.0.17",
     "remark": "^14.0.2",
     "remark-html": "^15.0.1",
-    "three": "^0.137.5"
+    "three": "^0.137.5",
+    "vanilla-tilt": "^1.7.2"
   },
   "devDependencies": {
     "autoprefixer": "^10.4.0",

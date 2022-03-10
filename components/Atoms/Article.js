@@ -4,7 +4,9 @@ import Link from "next/link";
 export default function Article({ title, description, href }) {
     const _title = regexifyString({
         pattern: /<.*?>/gim,
-        decorator: (match, index) => <>{match.slice(1, -1)}</>,
+        decorator: (match, index) => (
+            <span key={index}>{match.slice(1, -1)}</span>
+        ),
         input: title,
     });
 

@@ -62,7 +62,7 @@ export default function Header() {
                     },
                     {
                         ease: Expo.easeInOut,
-                        stagger: 0.05,
+                        stagger: 0.02,
                         y: -30,
                         skewX: 40,
                     },
@@ -77,7 +77,7 @@ export default function Header() {
                     {
                         delay: 0.1,
                         ease: Expo.easeInOut,
-                        stagger: 0.05,
+                        stagger: 0.02,
                         opacity: 1,
                         y: -36,
                         skewX: 0,
@@ -108,8 +108,8 @@ export default function Header() {
         const animate = () => {
             try {
                 if (isOpen) {
-                    y.current = lerp(y.current, 0, 0.08);
-                    c.current = lerp(c.current, 0, 0.1);
+                    y.current = lerp(y.current, 0, 0.08 * 2);
+                    c.current = lerp(c.current, 0, 0.1 * 2);
                     $transition.current.style.pointerEvents = "auto";
                     $transitionSVGPath.current.setAttribute(
                         "d",
@@ -120,8 +120,8 @@ export default function Header() {
                         }`
                     );
                 } else {
-                    y.current = lerp(y.current, 100, 0.065);
-                    c.current = lerp(c.current, 100, 0.08);
+                    y.current = lerp(y.current, 100, 0.065 * 2);
+                    c.current = lerp(c.current, 100, 0.08 * 2);
 
                     $transition.current.style.pointerEvents = "none";
                     $transitionSVGPath.current.setAttribute(

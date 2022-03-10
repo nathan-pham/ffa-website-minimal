@@ -20,14 +20,18 @@ const postsDirectory = path.join(process.cwd(), "./pages/posts/markdown");
 export default function Post({ metadata, content, id }) {
     const title = regexifyString({
         pattern: /<.*?>/gim,
-        decorator: (match, index) => <TextGradient>{match.slice(1, -1)}</TextGradient>,
+        decorator: (match, index) => (
+            <TextGradient key={index}>{match.slice(1, -1)}</TextGradient>
+        ),
         input: metadata.title,
     });
 
     return (
         <Root title={metadata.title}>
             <Section>
-                <h1 className="text-6xl font-extrabold leading-tight">{title}</h1>
+                <h1 className="text-6xl font-extrabold leading-tight">
+                    {title}
+                </h1>
                 <div className="mt-2">
                     <Link href="/posts">
                         <a className="hover:underline">← Back to Posts</a>
@@ -55,7 +59,9 @@ export default function Post({ metadata, content, id }) {
 
 export async function getStaticPaths() {
     const filenames = await fs.readdir(postsDirectory);
-    const paths = filenames.map((filename) => ({ params: { id: filename.replace(".md", "") } }));
+    const paths = filenames.map((filename) => ({
+        params: { id: filename.replace(".md", "") },
+    }));
 
     return {
         paths,
@@ -68,7 +74,9 @@ export async function getStaticProps({ params }) {
     const fileContents = await fs.readFile(fullPath, "utf8");
     const matterResult = matter(fileContents);
 
-    const processedContent = (await remark().use(html).process(matterResult.content)).toString();
+    const processedContent = (
+        await remark().use(html).process(matterResult.content)
+    ).toString();
 
     return {
         props: {
