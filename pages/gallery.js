@@ -54,7 +54,10 @@ export default function Gallery() {
                         for more accurate dates and events.
                     </p>
 
-                    <div className="grid grid-cols-3 gap-6 mt-8" ref={gridRef}>
+                    <div
+                        className="grid grid-cols-3 gap-6 mt-8 auto-rows-fr"
+                        ref={gridRef}
+                    >
                         {list.map((event) => (
                             <div
                                 className={`js-tilt bg-gray-100 rounded-lg p-6 relative flex flex-col justify-between text-white ${event.color}`}
