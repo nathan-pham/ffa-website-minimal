@@ -25,33 +25,21 @@ const images = [
 
 const ImageSection = () => {
     return (
-        <div className="w-full flex items-center justify-center">
+        <div className="w-full grid grid-cols-1 gap-6 md:flex items-center justify-center">
             {images.map((image, i) => (
                 <div
                     key={`image-${i}`}
-                    className="overflow-hidden relative w-20 h-96 hover:w-1/3 transition-all px-2 group"
+                    className="overflow-hidden relative md:w-20 md:h-96 md:hover:w-1/3 transition-all group"
                 >
                     <img
                         src={image.src}
                         className="w-full h-full object-cover rounded-lg"
                     />
-                    <p className="absolute text-white text-lg bottom-4 left-8 whitespace-nowrap font-semibold opacity-0 group-hover:opacity-100 transition-opacity">
+                    <p className="absolute text-white text-lg bottom-4 left-8 whitespace-nowrap font-semibold md:opacity-0 group-hover:opacity-100 transition-opacity">
                         {image.event || ""}
                     </p>
                 </div>
             ))}
-            {/* <div
-                key={`image-${i}`}
-                className="overflow-hidden relative w-16 h-96 hover:w-1/3 transition-all px-2 group"
-            >
-                <img
-                    src={image.src}
-                    className="w-full h-full object-cover rounded-lg"
-                />
-                <p className="absolute text-white text-lg bottom-4 left-8 whitespace-nowrap font-semibold opacity-0 group-hover:opacity-100 transition-opacity">
-                    {image.event || ""}
-                </p>
-            </div> */}
         </div>
     );
 };

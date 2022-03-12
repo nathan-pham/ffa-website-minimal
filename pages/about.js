@@ -85,7 +85,7 @@ export default function About() {
                         description="Meet our fantastic officers and advisors!"
                     />
                     <FlagScene />
-                    <div className="grid grid-cols-3 auto-rows-fr gap-6 mt-6">
+                    <div className="grid grid-cols-1 md:grid-cols-3 auto-rows-fr gap-6 mt-6">
                         {profiles.map((profile, i) => (
                             <ProfileCard key={i} {...profile} />
                         ))}

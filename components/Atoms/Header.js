@@ -110,6 +110,7 @@ export default function Header() {
                 if (isOpen) {
                     y.current = lerp(y.current, 0, 0.08 * 2);
                     c.current = lerp(c.current, 0, 0.1 * 2);
+
                     $transition.current.style.pointerEvents = "auto";
                     $transitionSVGPath.current.setAttribute(
                         "d",
@@ -120,8 +121,8 @@ export default function Header() {
                         }`
                     );
                 } else {
-                    y.current = lerp(y.current, 100, 0.065 * 2);
-                    c.current = lerp(c.current, 100, 0.08 * 2);
+                    y.current = lerp(y.current, 100, 0.08 * 2);
+                    c.current = lerp(c.current, 100, 0.1 * 2);
 
                     $transition.current.style.pointerEvents = "none";
                     $transitionSVGPath.current.setAttribute(
@@ -152,12 +153,12 @@ export default function Header() {
     return (
         <>
             <div className="header__backdrop"></div>
-            <header className="header px-16 py-6">
+            <header className="header px-6 md:px-16 py-6">
                 <h1 className="font-semibold text-xl">
                     <Link href="/">
                         <a className="flex items-center">
-                            <img src="/favicon-32x32.png" className="mr-2" />{" "}
-                            Del Oro FFA
+                            <img src="/favicon-32x32.png" className="mr-2" /> do
+                            ffa.
                         </a>
                     </Link>
                 </h1>

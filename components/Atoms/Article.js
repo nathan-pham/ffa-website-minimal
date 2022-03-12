@@ -12,7 +12,7 @@ export default function Article({ title, description, href }) {
 
     return (
         <article className="p-6 border rounded-lg transition-all hover:-translate-y-1 hover:shadow-lg mt-4">
-            <h2 className="text-4xl font-bold">{_title}</h2>
+            <h2 className="text-3xl md:text-4xl font-bold">{_title}</h2>
             <p className="text-gray-500 text-lg mt-2">{description}</p>
             <Link href={href}>
                 <a className="mt-4 block w-fit hover:underline">Read More →</a>

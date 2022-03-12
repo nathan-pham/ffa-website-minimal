@@ -41,21 +41,11 @@ export default function Gallery() {
                                 events
                             </>
                         }
-                        description="A list of all of our amazing opportunities, competitions, and fundraisers!"
+                        description="A list of all of our amazing opportunities, competitions, and fundraisers! Visit the Calendar for more events."
                     />
-                    <p className="text-gray-500 text-xl">
-                        Visit the{" "}
-                        <a
-                            className="underline"
-                            href="https://docs.google.com/document/d/1tL-KybfR5-eJZJMAh5FNAyQ1bgXbcXFxUVfw0Uowi-I/edit"
-                        >
-                            Calendar
-                        </a>{" "}
-                        for more accurate dates and events.
-                    </p>
 
                     <div
-                        className="grid grid-cols-3 gap-6 mt-8 auto-rows-fr"
+                        className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-8 auto-rows-fr"
                         ref={gridRef}
                     >
                         {list.map((event) => (

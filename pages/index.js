@@ -20,10 +20,10 @@ export default function Home() {
             <Section className="grid items-center text-center w-full py-36 relative">
                 <EmojiScene />
                 <div className="pointer-events-none">
-                    <h1 className="text-7xl font-extrabold leading-tight">
+                    <h1 className="text-6xl md:text-7xl font-extrabold leading-tight">
                         Agriculture <TextGradient>Reimagined</TextGradient>
                     </h1>
-                    <p className="mt-6 mb-8 text-gray-500 text-xl max-w-2xl mx-auto">
+                    <p className="mt-6 mb-8 text-gray-500 text-lg md:text-xl max-w-2xl mx-auto">
                         Del Oro FFA is a youth organization that provides the
                         best learning experience with an obsessive focus on
                         leadership and career skills.

@@ -29,7 +29,7 @@ export default function Post({ metadata, content, id }) {
     return (
         <Root title={metadata.title}>
             <Section>
-                <h1 className="text-6xl font-extrabold leading-tight">
+                <h1 className="text-5xl md:text-6xl font-extrabold leading-tight">
                     {title}
                 </h1>
                 <div className="mt-2">
