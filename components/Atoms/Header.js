@@ -5,7 +5,7 @@ import gsap, { Expo } from "gsap";
 
 const lerp = (a, b, n) => (1 - n) * a + n * b;
 
-const maxHeight = 1.5 * 1.33333333;
+const maxHeight = 1.5 * 1.4;
 
 export default function Header() {
     const [isOpen, setIsOpen] = useState(false);
