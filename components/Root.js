@@ -1,5 +1,7 @@
-import Header from "@components/Atoms/Header";
+import Header from "components/Atoms/Header";
 import Head from "next/head";
+
+import ThemeToggle from "./Theme/ThemeToggle";
 
 export default function Root({
     title = "Home",
@@ -65,6 +67,7 @@ export default function Root({
             </Head>
             {header && <Header />}
             <div className={header && margin ? "mt-28" : ""}>{children}</div>
+            <ThemeToggle />
         </>
     );
 }

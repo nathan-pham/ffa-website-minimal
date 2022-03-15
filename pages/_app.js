@@ -1,8 +1,13 @@
 import { SwitchTransition, Transition } from "react-transition-group";
+import { useState } from "react";
 import gsap from "gsap";
 
-import Analytics from "@components/Analytics";
 import "tailwindcss/tailwind.css";
+
+import themeContext from "components/Theme/themeContext";
+import Analytics from "components/Analytics";
+import useDarkMode from "hooks/useDarkMode";
+
 import "./_app.css";
 
 const duration = 500;
@@ -22,6 +27,8 @@ const onExit = (node) => {
 };
 
 export default function App({ Component, pageProps, router }) {
+    const [dark, setDark] = useState(useDarkMode());
+
     return (
         <SwitchTransition>
             <Transition
@@ -33,10 +40,12 @@ export default function App({ Component, pageProps, router }) {
                 mountOnEnter={true}
                 unmountOnExit={true}
             >
-                <div>
-                    <Component {...pageProps} />
-                    {process.env.NODE_ENV === "production" && <Analytics />}
-                </div>
+                <themeContext.Provider value={[dark, setDark]}>
+                    <div className={dark ? "dark" : ""}>
+                        <Component {...pageProps} />
+                        {process.env.NODE_ENV === "production" && <Analytics />}
+                    </div>
+                </themeContext.Provider>
             </Transition>
         </SwitchTransition>
     );

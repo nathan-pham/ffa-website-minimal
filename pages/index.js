@@ -16,7 +16,7 @@ import EmojiScene from "@components/Scenes/EmojiScene";
 export default function Home() {
     return (
         <Root margin={false}>
-            <div className="grid items-center text-center w-full relative">
+            <div className="grid items-center text-center w-full relative dark:bg-red-500">
                 <EmojiScene />
                 <div className="pointer-events-none pb-36 pt-64">
                     <Section>
