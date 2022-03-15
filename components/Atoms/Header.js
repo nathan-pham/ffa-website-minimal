@@ -1,9 +1,10 @@
-import { useState, useRef, useEffect } from "react";
+import { useState, useRef, useEffect, useContext } from "react";
 import Link from "next/link";
 
-import gsap, { Expo } from "gsap";
+import themeContext from "components/Theme/themeContext";
 
-const lerp = (a, b, n) => (1 - n) * a + n * b;
+import gsap, { Expo } from "gsap";
+import { lerp } from "utils/CustomMath";
 
 const maxHeight = 1.5 * 1.4;
 
@@ -13,6 +14,8 @@ export default function Header() {
     const $transition = useRef(null);
     const y = useRef(100);
     const c = useRef(100);
+
+    const [dark] = useContext(themeContext);
 
     const onClick = () => {
         setIsOpen(!isOpen);
@@ -154,13 +157,13 @@ export default function Header() {
 
     return (
         <>
-            <div className="header__backdrop"></div>
+            <div className="header__backdrop bg-[rgba(255, 255, 255, 0.9)] dark:bg-[rgba(0, 0, 0, 0.9)] transition-colors"></div>
             <header className="header px-6 md:px-16 py-6">
                 <h1 className="font-semibold text-xl">
                     <Link href="/">
                         <a className="flex items-center">
-                            <img src="/favicon-32x32.png" className="mr-2" /> do
-                            ffa.
+                            <img src="/favicon-32x32.png" className="mr-2" />{" "}
+                            <span className="dark:text-white">do ffa.</span>
                         </a>
                     </Link>
                 </h1>
@@ -171,24 +174,26 @@ export default function Header() {
                     ].join(" ")}
                     onClick={onClick}
                 >
-                    <span className="header__menu__bar header__menu__bar--top"></span>
-                    <span className="header__menu__bar header__menu__bar--bottom"></span>
+                    <span className="header__menu__bar header__menu__bar--top bg-black dark:bg-white"></span>
+                    <span className="header__menu__bar header__menu__bar--bottom bg-black dark:bg-white"></span>
                 </div>
             </header>
             <div className="transition" ref={$transition}>
-                <svg
-                    className="transition__svg"
-                    viewBox="0 0 100 100"
-                    preserveAspectRatio="none"
-                >
-                    <path
-                        className="transition__svg__path"
-                        fill="#fcc42a"
-                        vectorEffect="non-scaling-stroke"
-                        d="M 0 100 L 100 100 100 100 0 100 C 0 0, 0 0, 0 100"
-                        ref={$transitionSVGPath}
-                    />
-                </svg>
+                <div className="text-blue-100 dark:text-blue-600">
+                    <svg
+                        className="transition__svg"
+                        viewBox="0 0 100 100"
+                        preserveAspectRatio="none"
+                    >
+                        <path
+                            className="transition__svg__path"
+                            fill="currentColor"
+                            vectorEffect="non-scaling-stroke"
+                            d="M 0 100 L 100 100 100 100 0 100 C 0 0, 0 0, 0 100"
+                            ref={$transitionSVGPath}
+                        />
+                    </svg>
+                </div>
 
                 <ul
                     className={[
@@ -205,7 +210,9 @@ export default function Header() {
                                         : `/${link.toLowerCase()}`
                                 }
                             >
-                                <a className="slick-link">{link}</a>
+                                <a className="slick-link dark:text-white">
+                                    {link}
+                                </a>
                             </Link>
                         </li>
                     ))}
@@ -232,7 +239,6 @@ export default function Header() {
                     width: 100%;
                     height: 5rem;
                     z-index: 2;
-                    background: rgba(255, 255, 255, 0.9);
                     backdrop-filter: blur(5px);
                 }
 
@@ -249,7 +255,6 @@ export default function Header() {
 
                 .header__menu__bar {
                     height: 2px;
-                    background: #000;
                     transform-origin: center;
                     transition: 0.2s ease;
                 }

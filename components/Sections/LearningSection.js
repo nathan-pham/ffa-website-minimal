@@ -27,10 +27,14 @@ export default function LearningSection() {
                         <div className="text-white bg-blue-500 rounded-lg h-10 w-10 grid place-items-center mr-4 text-lg select-none">
                             {i + 1}
                         </div>
-                        <h2 className="text-3xl font-bold">{title}</h2>
+                        <h2 className="text-3xl font-bold dark:text-white">
+                            {title}
+                        </h2>
                     </div>
 
-                    <p className="text-gray-500 text-xl mt-2">{description}</p>
+                    <p className="text-gray-500 text-xl mt-2 dark:text-gray-300">
+                        {description}
+                    </p>
                 </div>
             ))}
         </div>

@@ -1,12 +1,11 @@
 import { SwitchTransition, Transition } from "react-transition-group";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import gsap from "gsap";
 
 import "tailwindcss/tailwind.css";
 
 import themeContext from "components/Theme/themeContext";
 import Analytics from "components/Analytics";
-import useDarkMode from "hooks/useDarkMode";
 
 import "./_app.css";
 
@@ -27,7 +26,15 @@ const onExit = (node) => {
 };
 
 export default function App({ Component, pageProps, router }) {
-    const [dark, setDark] = useState(useDarkMode());
+    const [dark, setDark] = useState(false);
+
+    useEffect(() => {
+        setDark(
+            localStorage.theme === "dark" ||
+                (!("theme" in localStorage) &&
+                    window.matchMedia("(prefers-color-scheme: dark)").matches)
+        );
+    }, []);
 
     return (
         <SwitchTransition>

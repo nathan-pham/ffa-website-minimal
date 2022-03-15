@@ -66,7 +66,14 @@ export default function Root({
                 />
             </Head>
             {header && <Header />}
-            <div className={header && margin ? "mt-28" : ""}>{children}</div>
+            <div
+                className={[
+                    header && margin ? "mt-28" : "",
+                    "dark:bg-black transition-colors",
+                ].join(" ")}
+            >
+                {children}
+            </div>
             <ThemeToggle />
         </>
     );

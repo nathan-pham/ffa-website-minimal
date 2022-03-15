@@ -3,7 +3,7 @@ export default function GenericTitle({ title, description, margin = "mt-4" }) {
         <>
             <h1
                 className={[
-                    "text-5xl md:text-6xl font-extrabold leading-tight",
+                    "text-5xl md:text-6xl font-extrabold leading-tight dark:text-white",
                     margin,
                 ].join(" ")}
             >
