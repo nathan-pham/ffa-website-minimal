@@ -20,6 +20,10 @@ const EmojiScene = () => {
             canvasRef.current.style.height = `${height}px`;
             canvasRef.current.width = width;
             canvasRef.current.height = height;
+
+            emojis.current.forEach((emoji) =>
+                emoji.onResize({ width, height })
+            );
         };
 
         const onMouseMove = (e) => {

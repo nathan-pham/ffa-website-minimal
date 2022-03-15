@@ -1,9 +1,15 @@
 import Header from "@components/Atoms/Header";
 import Head from "next/head";
 
-export default function Root({ title = "Home", header = true, children }) {
+export default function Root({
+    title = "Home",
+    header = true,
+    margin = true,
+    children,
+}) {
     const _title = `Del Oro FFA | ${title}`;
-    const _description = "Del Oro FFA is a youth organization that provides the best learning experience with an obsessive focus on leadership and career skills.";
+    const _description =
+        "Del Oro FFA is a youth organization that provides the best learning experience with an obsessive focus on leadership and career skills.";
 
     return (
         <>
@@ -17,25 +23,48 @@ export default function Root({ title = "Home", header = true, children }) {
                 <meta property="og:author" content="Nathan Pham" />
                 <meta property="og:title" content={_title} />
                 <meta property="og:description" content={_description} />
-                <meta property="og:image" content="icons/apple-touch-icon.png" />
+                <meta
+                    property="og:image"
+                    content="icons/apple-touch-icon.png"
+                />
 
                 <title>{_title}</title>
 
                 <meta name="theme-color" content="#000000" />
 
-                <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
-                <link href="/favicon-16x16.png" rel="icon" type="image/png" sizes="16x16" />
-                <link href="/favicon-32x32.png" rel="icon" type="image/png" sizes="32x32" />
+                <link
+                    rel="shortcut icon"
+                    href="/favicon.ico"
+                    type="image/x-icon"
+                />
+                <link
+                    href="/favicon-16x16.png"
+                    rel="icon"
+                    type="image/png"
+                    sizes="16x16"
+                />
+                <link
+                    href="/favicon-32x32.png"
+                    rel="icon"
+                    type="image/png"
+                    sizes="32x32"
+                />
                 <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
 
                 <link rel="manifest" href="/site.webmanifest" />
 
-                <meta name="viewport" content="minimum-scale=1, initial-scale=1, width=device-width, shrink-to-fit=no, user-scalable=no, viewport-fit=cover" />
+                <meta
+                    name="viewport"
+                    content="minimum-scale=1, initial-scale=1, width=device-width, shrink-to-fit=no, user-scalable=no, viewport-fit=cover"
+                />
                 <meta name="HandheldFriendly" content="true" />
-                <meta httpEquiv="Content-Security-Policy" content="upgrade-insecure-requests" />
+                <meta
+                    httpEquiv="Content-Security-Policy"
+                    content="upgrade-insecure-requests"
+                />
             </Head>
             {header && <Header />}
-            <div className={header ? "mt-28" : ""}>{children}</div>
+            <div className={header && margin ? "mt-28" : ""}>{children}</div>
         </>
     );
 }

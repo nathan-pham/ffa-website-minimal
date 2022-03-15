@@ -59,6 +59,11 @@ export default class Emoji {
         ctx.restore();
     }
 
+    onResize({ width, height }) {
+        this.width = width;
+        this.height = height;
+    }
+
     #selectEmoji() {
         const emojis = ["🏵️", "🌱", "🌵", "🌿", "☘️", "🌰"];
         return emojis[Math.floor(Math.random() * emojis.length)];
