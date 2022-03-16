@@ -36,7 +36,7 @@ export default function Home() {
 
             <Section>
                 <div className="text-center">
-                    <p className="uppercase font-mono text-sm font-semibold tracking-widest my-8">
+                    <p className="uppercase font-mono text-sm font-semibold tracking-widest my-8 dark:text-white">
                         Explore the Del Oro FFA Way
                     </p>
 
