@@ -22,7 +22,7 @@ export default function ProfileCard({ src, name, position, email }) {
                 />
 
                 <a
-                    className="absolute h-14 w-14 rounded-full bg-blue-600 grid place-items-center right-4 -bottom-6 cursor-pointer"
+                    className="absolute h-14 w-14 rounded-full bg-yellow-500 dark:bg-blue-600 grid place-items-center right-4 -bottom-6 cursor-pointer"
                     href={`mailto:${email}`}
                     onMouseMove={onMouseMove}
                     onMouseLeave={onMouseLeave}
