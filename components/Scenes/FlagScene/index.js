@@ -4,10 +4,7 @@ import Flag from "./Flag";
 
 export default function FlagScene() {
     return (
-        <div
-            className="rounded-lg h-screen max-h-[80vmin] w-full"
-            style={{ background: "radial-gradient(rgb(243 244 246), #fff)" }}
-        >
+        <div className="rounded-lg h-screen max-h-[80vmin] w-full">
             <Canvas className="w-full h-full">
                 <Flag />
             </Canvas>

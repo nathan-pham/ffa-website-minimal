@@ -1,15 +1,15 @@
-export default function Footer() {
-    const Link = ({ href, children }) => (
-        <a
-            href={href}
-            target="_blank"
-            rel="noreferrer"
-            className="hover:text-black text-gray-500 transition-color font-xl"
-        >
-            {children}
-        </a>
-    );
+const Link = ({ href, children }) => (
+    <a
+        href={href}
+        target="_blank"
+        rel="noreferrer"
+        className="hover:text-black text-gray-500 transition-colors font-xl dark:hover:text-white"
+    >
+        {children}
+    </a>
+);
 
+export default function Footer() {
     // prettier-ignore
     return (
         <footer className="py-12 text-center flex items-center gap-4 justify-center">

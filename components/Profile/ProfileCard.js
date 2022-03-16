@@ -1,38 +1,32 @@
 import { PaperPlane } from "react-ionicons";
 
+import { useRef } from "react";
+import useMover from "hooks/useMover";
+
+import P from "components/Atoms/P";
+import H2 from "components/Atoms/H2";
+
 export default function ProfileCard({ src, name, position, email }) {
     const _src = `/images/profiles/${src}`;
 
-    const onMouseMove = (e) => {
-        const bbox = e.target.getBoundingClientRect();
-        const x = e.clientX - bbox.left - bbox.width / 2;
-        const y = e.clientY - bbox.top - bbox.height / 2;
-
-        e.target.style.transform = `translate(${x}px, ${y}px)`;
-    };
-
-    const onMouseLeave = (e) => {
-        e.target.style.transform = "";
-    };
+    const buttonRef = useRef(null);
+    const [onMouseMove, onMouseLeave] = useMover(buttonRef);
 
     return (
-        <div className="border rounded-lg">
-            <div className="h-72 grid place-items-center bg-gray-100 rounded-t-lg relative">
+        <div className="border rounded-lg dark:border-gray-900">
+            <div className="h-72 grid place-items-center bg-gray-100 rounded-t-lg relative dark:bg-gray-900">
                 <img
-                    className="h-28 w-28 rounded-full object-cover border"
+                    className="h-28 w-28 rounded-full object-cover border dark:border-gray-900"
                     src={_src}
                     alt={`${name}'s profile picture`}
                 />
+
                 <a
-                    className="absolute h-14 w-14 rounded-full bg-yellow-500 grid place-items-center shadow-lg hover:shadow-yellow-400 right-4 -bottom-6 cursor-pointer"
+                    className="absolute h-14 w-14 rounded-full bg-blue-600 grid place-items-center right-4 -bottom-6 cursor-pointer"
                     href={`mailto:${email}`}
-                    // ref={planeRef}
                     onMouseMove={onMouseMove}
                     onMouseLeave={onMouseLeave}
-                    style={{
-                        transition:
-                            "transform 200ms ease-out, box-shadow 200ms ease-in-out",
-                    }}
+                    ref={buttonRef}
                 >
                     <span className="pointer-events-none">
                         <PaperPlane color="#fff" />
@@ -40,8 +34,8 @@ export default function ProfileCard({ src, name, position, email }) {
                 </a>
             </div>
             <div className="py-10 text-center flex flex-col items-center justify-center">
-                <h2 className="uppercase font-semibold text-xl">{name}</h2>
-                <p className="text-gray-500">{position}</p>
+                <H2 className="uppercase font-semibold text-xl">{name}</H2>
+                <P className="text-md">{position}</P>
             </div>
         </div>
     );

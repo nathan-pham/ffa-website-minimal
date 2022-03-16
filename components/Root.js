@@ -3,12 +3,7 @@ import Head from "next/head";
 
 import ThemeToggle from "./Theme/ThemeToggle";
 
-export default function Root({
-    title = "Home",
-    header = true,
-    margin = true,
-    children,
-}) {
+export default function Root({ title = "Home", header = true, children }) {
     const _title = `Del Oro FFA | ${title}`;
     const _description =
         "Del Oro FFA is a youth organization that provides the best learning experience with an obsessive focus on leadership and career skills.";
@@ -66,14 +61,7 @@ export default function Root({
                 />
             </Head>
             {header && <Header />}
-            <div
-                className={[
-                    header && margin ? "mt-28" : "",
-                    "dark:bg-black transition-colors",
-                ].join(" ")}
-            >
-                {children}
-            </div>
+            <div className={header ? "pt-28" : ""}>{children}</div>
             <ThemeToggle />
         </>
     );

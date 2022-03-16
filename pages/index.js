@@ -1,54 +1,54 @@
-import Section from "@components/Sections/Section";
-import LearningSection from "@components/Sections/LearningSection";
-import ImageSection from "@components/Sections/ImageSection";
-import Step from "@components/Step";
+import Section from "components/Sections/Section";
+import LearningSection from "components/Sections/LearningSection";
+import ImageSection from "components/Sections/ImageSection";
+import Step from "components/Step";
 
-import TextGradient from "@components/TextGradient";
-import { PrimaryButton } from "@components/Atoms/Button";
-import Footer from "@components/Atoms/Footer";
+import TextGradient from "components/TextGradient";
+import Button from "components/Atoms/Button";
+import Footer from "components/Atoms/Footer";
+import P from "components/Atoms/P";
+import H2 from "components/Atoms/H2";
 
-import Root from "@components/Root";
+import Root from "components/Root";
 
 import Link from "next/link";
 
-import EmojiScene from "@components/Scenes/EmojiScene";
+import EmojiScene from "components/Scenes/EmojiScene";
 
 export default function Home() {
     return (
         <Root margin={false}>
             <div className="grid items-center text-center w-full relative">
                 <EmojiScene />
-                <div className="pointer-events-none pb-36 pt-64">
+                <div className="pointer-events-none py-36">
                     <Section>
                         <h1 className="text-5xl sm:text-6xl md:text-7xl font-extrabold leading-tight dark:text-white">
                             Agriculture <TextGradient>Reimagined</TextGradient>
                         </h1>
-                        <p className="mt-6 mb-8 text-gray-500 text-md sm:text-lg md:text-xl max-w-2xl mx-auto dark:text-gray-300">
+                        <P className="mt-6 mb-8 md:text-xl max-w-2xl mx-auto">
                             Del Oro FFA is a youth organization that provides
                             the best learning experience with an obsessive focus
                             on leadership and career skills.
-                        </p>
+                        </P>
                     </Section>
                 </div>
             </div>
 
             <Section>
                 <div className="text-center">
-                    <p className="uppercase font-mono text-sm font-semibold tracking-widest my-8 dark:text-gray-300">
+                    <p className="uppercase font-mono text-sm font-semibold tracking-widest my-8">
                         Explore the Del Oro FFA Way
                     </p>
 
                     <Step number={1} />
 
-                    <h2 className="my-6 text-5xl font-bold dark:text-white">
+                    <H2 className="my-6">
                         Learn by{" "}
                         <TextGradient gradient="from-blue-500 to-green-300">
                             doing stuff.
                         </TextGradient>
-                    </h2>
-                    <p className="text-gray-500 text-xl dark:text-gray-300">
-                        Agricultural education includes 3 components.
-                    </p>
+                    </H2>
+                    <P>Agricultural education includes 3 components.</P>
                 </div>
 
                 <div className="mt-16">
@@ -58,7 +58,7 @@ export default function Home() {
                 <div className="w-fit mx-auto mt-10">
                     <Link href="/posts">
                         <a>
-                            <PrimaryButton>Learn More</PrimaryButton>
+                            <Button>Learn More</Button>
                         </a>
                     </Link>
                 </div>
@@ -72,17 +72,17 @@ export default function Home() {
                         lineGradient="from-orange-500"
                     />
 
-                    <h2 className="my-6 text-5xl font-bold dark:text-white">
+                    <H2 className="my-6">
                         Work with our{" "}
                         <TextGradient gradient="from-orange-500 to-yellow-300">
                             awesome team.
                         </TextGradient>
-                    </h2>
-                    <p className="text-gray-500 max-w-2xl text-xl mx-auto dark:text-gray-300">
+                    </H2>
+                    <P className="max-w-2xl mx-auto">
                         Doing stuff alone is lame. Collaborate with your peers
                         and our officers to make events happen, participate in
                         national competitions, and have fun!
-                    </p>
+                    </P>
                 </div>
 
                 <div className="mt-16">
@@ -92,7 +92,7 @@ export default function Home() {
                 <div className="flex gap-6 w-full justify-center items-center mt-10">
                     <Link href="/about">
                         <a>
-                            <PrimaryButton>Officers</PrimaryButton>
+                            <Button>Officers</Button>
                         </a>
                     </Link>
                 </div>
@@ -106,19 +106,17 @@ export default function Home() {
                         lineGradient="from-purple-500"
                     />
 
-                    <h2 className="my-6 text-5xl font-bold dark:text-white">
+                    <H2 className="my-6">
                         Trusted by{" "}
                         <TextGradient gradient="from-purple-500 to-pink-400">
                             amazing businesses.
                         </TextGradient>
-                    </h2>
-                    <p className="text-gray-500 text-xl dark:text-gray-300">
-                        You're in good hands. Promise.
-                    </p>
+                    </H2>
+                    <P>You're in good hands. Promise.</P>
 
                     <div className="flex justify-center mt-10">
                         <a href="/sponsors.pdf">
-                            <PrimaryButton>Sponsor Us</PrimaryButton>
+                            <Button>Sponsor Us</Button>
                         </a>
                     </div>
                 </div>

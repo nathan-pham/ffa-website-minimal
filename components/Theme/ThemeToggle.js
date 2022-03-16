@@ -28,13 +28,17 @@ const ThemeToggle = () => {
     };
 
     return (
-        <div className="fixed bottom-6 right-6 md:right-16 ">
+        <div className="fixed bottom-6 right-6">
             <button
-                className="border outline-none grid place-items-center h-10 w-10 bg-white rounded-full cursor-pointer hover:shadow-md hover:-translate-y-1 transition-all"
+                className="border outline-none grid place-items-center h-12 w-12 bg-white rounded-full cursor-pointer hover:shadow-lg hover:-translate-y-1 transition-all dark:bg-gray-900 dark:text-white dark:border-gray-800 dark:shadow-gray-900"
                 onClick={onClick}
             >
                 <div ref={toggleRef}>
-                    {dark ? <MoonOutline /> : <SunnyOutline />}
+                    {dark ? (
+                        <MoonOutline color="fillColor" />
+                    ) : (
+                        <SunnyOutline color="fillColor" />
+                    )}
                 </div>
             </button>
         </div>

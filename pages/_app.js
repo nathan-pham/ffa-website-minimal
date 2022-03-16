@@ -36,6 +36,14 @@ export default function App({ Component, pageProps, router }) {
         );
     }, []);
 
+    useEffect(() => {
+        if (dark) {
+            document.body.style.backgroundColor = "#000";
+        } else {
+            document.body.style.backgroundColor = "#fff";
+        }
+    }, [dark]);
+
     return (
         <SwitchTransition>
             <Transition

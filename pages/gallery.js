@@ -1,17 +1,15 @@
-import Root from "@components/Root";
-import TextGradient from "@components/TextGradient";
+import Root from "components/Root";
+import TextGradient from "components/TextGradient";
 
-import GenericTitle from "@components/Sections/GenericTitle";
-import GalleryScene from "@components/Scenes/GalleryScene";
-import BackHome from "@components/BackHome";
+import GenericTitle from "components/Sections/GenericTitle";
 
-import Section from "@components/Sections/Section";
-import Footer from "@components/Atoms/Footer";
+import Section from "components/Sections/Section";
+import Footer from "components/Atoms/Footer";
 
 import { useEffect, useRef } from "react";
 import VanillaTilt from "vanilla-tilt";
 
-import list from "@components/Events/list";
+import list from "components/Events/list";
 
 export default function Gallery() {
     const gridRef = useRef(null);

@@ -1,11 +1,11 @@
 import { useEffect } from "react";
 
-const useFrame = (animationLoop) => {
+const useFrame = (animationLoop, dependencies = []) => {
     useEffect(() => {
         let animationID = null;
 
         const animate = () => {
-            animationLoop();
+            animationLoop(animationID);
             animationID = window.requestAnimationFrame(animate);
         };
 
@@ -14,7 +14,7 @@ const useFrame = (animationLoop) => {
         return () => {
             window.cancelAnimationFrame(animationID);
         };
-    }, []);
+    }, dependencies);
 };
 
 export default useFrame;
