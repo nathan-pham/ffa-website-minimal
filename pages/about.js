@@ -75,7 +75,7 @@ export default function About() {
     return (
         <Root title="About">
             <Section>
-                <div className="text-center my-10 mx-auto max-w-5xl">
+                <div className="text-center mt-10 mx-auto max-w-5xl">
                     <GenericTitle
                         title={
                             <>

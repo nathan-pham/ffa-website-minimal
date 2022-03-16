@@ -31,7 +31,7 @@ export default function Gallery() {
     return (
         <Root title="Gallery">
             <Section>
-                <div className="text-center my-10 mx-auto max-w-5xl">
+                <div className="text-center mt-10 mx-auto max-w-5xl">
                     <GenericTitle
                         title={
                             <>
@@ -43,7 +43,7 @@ export default function Gallery() {
                     />
 
                     <div
-                        className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-8 auto-rows-fr"
+                        className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-8 auto-rows-fr"
                         ref={gridRef}
                     >
                         {list.map((event, i) => (
@@ -63,19 +63,6 @@ export default function Gallery() {
                 </div>
             </Section>
             <Footer />
-            {/* <BackHome />
-            <GalleryScene /> */}
-            {/* <div className="fixed top-0 left-0 z-10 text-center w-screen h-screen flex flex-col items-center justify-center">
-                <GenericTitle
-                    title={
-                        <>
-                            <TextGradient>Scroll</TextGradient> our memories
-                        </>
-                    }
-                    description="An infinite gallery of experiences."
-                    margin=""
-                />
-            </div> */}
         </Root>
     );
 }
