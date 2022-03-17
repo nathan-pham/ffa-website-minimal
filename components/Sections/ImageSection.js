@@ -25,11 +25,11 @@ const images = [
 
 const ImageSection = () => {
     return (
-        <div className="w-full grid grid-cols-1 gap-6 md:flex items-center justify-center">
+        <div className="w-full grid grid-cols-1 gap-6 md:gap-0 md:flex items-center justify-center">
             {images.map((image, i) => (
                 <div
                     key={`image-${i}`}
-                    className="overflow-hidden relative md:w-20 md:h-96 md:hover:w-1/3 transition-all group"
+                    className="overflow-hidden relative md:px-3 md:w-20 md:h-96 md:hover:w-1/3 transition-all group"
                 >
                     <img
                         src={image.src}
