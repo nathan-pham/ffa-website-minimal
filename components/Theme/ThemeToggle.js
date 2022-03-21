@@ -32,6 +32,7 @@ const ThemeToggle = () => {
             <button
                 className="border outline-none grid place-items-center h-12 w-12 bg-white rounded-full cursor-pointer hover:shadow-lg hover:-translate-y-1 transition-all dark:bg-gray-900 dark:text-white dark:border-gray-800 dark:shadow-gray-900"
                 onClick={onClick}
+                ariaLabel="Toggle Theme"
             >
                 <div ref={toggleRef}>
                     {dark ? (

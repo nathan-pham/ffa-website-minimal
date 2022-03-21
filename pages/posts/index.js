@@ -1,12 +1,12 @@
 import Section from "components/Sections/Section";
 import Footer from "components/Atoms/Footer";
 import TextGradient from "components/TextGradient";
-import Input from "components/Atoms/Form/Input";
 import Article from "components/Atoms/Article";
 import Root from "components/Root";
 
+import Input from "components/Atoms/Form/Input";
+
 import { useState } from "react";
-import Link from "next/link";
 
 import matter from "gray-matter";
 import { promises as fs } from "fs";

@@ -52,7 +52,7 @@ export default function Root({ title = "Home", header = true, children }) {
 
                 <meta
                     name="viewport"
-                    content="width=device-width, initial-scale=1, maximum-scale=1"
+                    content="width=device-width, initial-scale=1"
                 />
                 <meta name="HandheldFriendly" content="true" />
                 <meta

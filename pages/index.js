@@ -13,7 +13,9 @@ import Root from "components/Root";
 
 import Link from "next/link";
 
-import EmojiScene from "components/Scenes/EmojiScene";
+import dynamic from "next/dynamic";
+
+const EmojiScene = dynamic(import("components/Scenes/EmojiScene"));
 
 export default function Home() {
     return (

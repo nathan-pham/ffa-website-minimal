@@ -8,14 +8,14 @@ export default function RegisterForm({ variant = "none" }) {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        console.log(email)
+        console.log(email);
 
         const res = await fetch("/api/hello", {
             method: "POST",
             body: JSON.stringify({ email }),
-        })
+        });
 
-        console.log(await res.json())
+        console.log(await res.json());
     };
 
     const handleInput = (e) => {
@@ -24,7 +24,15 @@ export default function RegisterForm({ variant = "none" }) {
 
     const form = (
         <form className="flex gap-4" onSubmit={handleSubmit}>
-            <Input value={email} name="landing_email" placeholder="janedoe@puhsd.k12.ca.us" className="w-96  max-w-[60vw]" onChange={handleInput} type="email" required />
+            <Input
+                value={email}
+                name="landing_email"
+                placeholder="janedoe@puhsd.k12.ca.us"
+                className="w-96  max-w-[60vw]"
+                onChange={handleInput}
+                type="email"
+                required
+            />
             <PrimaryButton>Start Learning</PrimaryButton>
         </form>
     );
