@@ -67,7 +67,11 @@ export default function Header() {
                 <h1 className="font-semibold text-xl">
                     <Link href="/">
                         <a className="flex items-center">
-                            <img src="/favicon-32x32.png" className="mr-2" />{" "}
+                            <img
+                                src="/favicon-64x64.png"
+                                className="mr-2 w-[32px] h-[32px]"
+                                alt="Chicken Emoji"
+                            />{" "}
                             <span className="dark:text-white">do ffa.</span>
                         </a>
                     </Link>

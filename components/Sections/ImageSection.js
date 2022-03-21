@@ -34,6 +34,8 @@ const ImageSection = () => {
                     <img
                         src={image.src}
                         className="w-full h-full object-cover rounded-lg"
+                        alt={image.event || "FFA Event"}
+                        loading="lazy"
                     />
                     <p className="absolute text-white text-lg bottom-4 left-8 whitespace-nowrap font-semibold md:opacity-0 group-hover:opacity-100 transition-opacity">
                         {image.event || ""}

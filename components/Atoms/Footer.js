@@ -3,7 +3,7 @@ const Link = ({ href, children }) => (
         href={href}
         target="_blank"
         rel="noreferrer"
-        className="hover:text-black text-gray-500 transition-colors font-xl dark:hover:text-white"
+        className="hover:text-black text-gray-500 dark:text-gray-400 transition-colors font-xl dark:hover:text-white"
     >
         {children}
     </a>
